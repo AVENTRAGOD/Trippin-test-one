@@ -1,0 +1,536 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-04-24T07:39:38Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/44280965",
+        "is_in": "Badulla District",
+        "name": "Rawana Ella Falls",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.0545278,
+          6.8408548
+        ]
+      },
+      "id": "node/44280965"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/247212347",
+        "name": "Devon Falls",
+        "tourism": "attraction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6301127,
+          6.9515033
+        ]
+      },
+      "id": "node/247212347"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/250132315",
+        "historic": "monument",
+        "image": "https://photos.app.goo.gl/5XQZwzR858uo9xtm9",
+        "name": "Tsunami Honganji Vihara",
+        "note": "Buddha Statue - since 26.12.2005",
+        "url": "https://youtu.be/pELm3vZ75n4?si=lOdQCZt--ckB2XuJ&t=61"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.0917452,
+          6.1630795
+        ]
+      },
+      "id": "node/250132315"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/567018162",
+        "historic": "ruins",
+        "name": "Lotus Pond",
+        "tourism": "attraction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.0039995,
+          7.9748478
+        ]
+      },
+      "id": "node/567018162"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/598181176",
+        "alt:MSL": "1905",
+        "fee": "yes",
+        "name": "Lipton's seat",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.0155075,
+          6.7806643
+        ]
+      },
+      "id": "node/598181176"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/603033668",
+        "direction": "135",
+        "name": "World's End (Plate 1)",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7944245,
+          6.780405
+        ]
+      },
+      "id": "node/603033668"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/618491025",
+        "amenity": "school",
+        "historic": "monument",
+        "name": "Ananda College",
+        "shop": "department_store"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.8685501,
+          6.9243358
+        ]
+      },
+      "id": "node/618491025"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/620382353",
+        "historic": "monument",
+        "name": "Independence Square"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.8675663,
+          6.9046368
+        ]
+      },
+      "id": "node/620382353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/662919724",
+        "name": "National Art Gallery",
+        "tourism": "museum",
+        "wikidata": "Q11302924",
+        "wikipedia": "en:National Art Gallery, Sri Lanka"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.861969,
+          6.9114097
+        ]
+      },
+      "id": "node/662919724"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/682747849",
+        "addr:city": "Colombo",
+        "addr:street": "Janadhipathi Mawatha",
+        "information": "Started 1895",
+        "name": "Old General Post Office Fort",
+        "tourism": "museum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.8434128,
+          6.9360351
+        ]
+      },
+      "id": "node/682747849"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/891639918",
+        "direction": "180",
+        "name": "Mini World's End",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8003087,
+          6.7853177
+        ]
+      },
+      "id": "node/891639918"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/917949443",
+        "name": "Hummanaya Blow Hole",
+        "natural": "blowhole",
+        "tourism": "attraction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7387267,
+          5.9776154
+        ]
+      },
+      "id": "node/917949443"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1105822183",
+        "addr:city": "Pinnawala",
+        "addr:street": "Karandupana-Rambukkana Road",
+        "designation": "Pinnawala Elephant Orphanage",
+        "name": "Pinnawala Elephant Orphanage",
+        "tourism": "zoo",
+        "website": "https://youtu.be/dFCQr53JNbM",
+        "wikidata": "Q2672104",
+        "wikimedia_commons": "Category:Pinnawala Elephant Orphanage",
+        "wikipedia": "en:Pinnawala Elephant Orphanage"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.3871935,
+          7.300512
+        ]
+      },
+      "id": "node/1105822183"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1186176594",
+        "historic": "archaeological_site",
+        "name": "Beli-Lena Caves"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.4362296,
+          7.0031358
+        ]
+      },
+      "id": "node/1186176594"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1231840497",
+        "name": "Snake farm",
+        "tourism": "zoo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.4835523,
+          6.0396569
+        ]
+      },
+      "id": "node/1231840497"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1402637232",
+        "alt_name": "The Lion Pond",
+        "historic": "ruins",
+        "name": "Sinha Pokuna"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.514095,
+          8.3512032
+        ]
+      },
+      "id": "node/1402637232"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1523621150",
+        "museum": "railway",
+        "name": "Railway Museum",
+        "name:pl": "Muzeum Kolejnictwa",
+        "tourism": "museum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.858871,
+          6.9317214
+        ]
+      },
+      "id": "node/1523621150"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1642989153",
+        "name": "Point Pedro",
+        "name:ca": "Cap de Sakkotei",
+        "name:en": "Sakkotei Cape",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2121949,
+          9.835611
+        ]
+      },
+      "id": "node/1642989153"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1642999046",
+        "name": "Casuarina Beach",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.8858088,
+          9.7623085
+        ]
+      },
+      "id": "node/1642999046"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1661840272",
+        "name": "Temple Wele pansala",
+        "opening_hours": "24/7",
+        "tourism": "attraction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.9946203,
+          6.4463338
+        ]
+      },
+      "id": "node/1661840272"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1708405577",
+        "addr:city": "Ellepola",
+        "addr:street": "Ratnapura - Wellawaya Road",
+        "name": "Ellepola Ella",
+        "tourism": "viewpoint",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6860466,
+          6.6307993
+        ]
+      },
+      "id": "node/1708405577"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1712902149",
+        "name": "Diyaluma Falls",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.0314914,
+          6.7332925
+        ]
+      },
+      "id": "node/1712902149"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1720902214",
+        "height": "16",
+        "historic": "ruins",
+        "historic:civilization": "Mahayana",
+        "name": "Buduruwagala Rock Carvings",
+        "wikidata": "Q2927591",
+        "wikimedia_commons": "Category:Buduruwagala",
+        "wikipedia": "en:Buduruvagala"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.0783616,
+          6.687014
+        ]
+      },
+      "id": "node/1720902214"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1723379303",
+        "name": "Kanniya Hot Water Wells",
+        "natural": "hot_spring",
+        "tourism": "attraction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.1713144,
+          8.6044881
+        ]
+      },
+      "id": "node/1723379303"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1727612256",
+        "historic": "archaeological_site",
+        "name": "Dambegoda Bosath Statue",
+        "note": "This also old same as Maligawila Buddha statue. Both of this statues located in the same complex. This is about 80 feet tall statue made of up of single crystal stone.",
+        "operator": "Department of Archaeology, LK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.357038,
+          6.7258324
+        ]
+      },
+      "id": "node/1727612256"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1727612263",
+        "addr:city": "Maligawila, Okkampitiya",
+        "addr:street": "Maligawila Road",
+        "historic": "archaeological_site",
+        "name": "Maligawila Buddha Statue",
+        "note": "This is approximately 1200 yrs old 110 feet Buddha statue made of crystal stone.",
+        "operator": "Department of Archaeology, LK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.3524319,
+          6.7283447
+        ]
+      },
+      "id": "node/1727612263"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1727612266",
+        "addr:city": "Buttala",
+        "historic": "archaeological_site",
+        "name": "Yudaganawa Stupa",
+        "operator": "Department of Archaeology"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.2332517,
+          6.771581
+        ]
+      },
+      "id": "node/1727612266"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1727709368",
+        "historic": "archaeological_site",
+        "name": "Sandagiri Stupa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.2948619,
+          6.2807167
+        ]
+      },
+      "id": "node/1727709368"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1727709404",
+        "historic": "monument",
+        "name": "Tomb of Pussadeva"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7532801,
+          6.4450929
+        ]
+      },
+      "id": "node/1727709404"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1730307197",
+        "name": "National Puppet Museum",
+        "tourism": "museum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.8664848,
+          6.8614077
+        ]
+      },
+      "id": "node/1730307197"
+    }
+  ]
+}

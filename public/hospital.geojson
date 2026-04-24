@@ -1,0 +1,531 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-04-24T07:41:44Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/61602781",
+        "internet_access": "no",
+        "name": "Kumarakanda",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1242871,
+          6.1124485
+        ]
+      },
+      "id": "node/61602781"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/87762356",
+        "name": "Piyadigama",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1909694,
+          6.0536503
+        ]
+      },
+      "id": "node/87762356"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/91029612",
+        "addr:city": "Thiranagama",
+        "addr:postcode": "80244",
+        "addr:street": "Galle Road",
+        "name": "Thiranagama",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1143858,
+          6.1223145
+        ]
+      },
+      "id": "node/91029612"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/91036830",
+        "name": "Gintota",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1793892,
+          6.0606665
+        ]
+      },
+      "id": "node/91036830"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/92058899",
+        "name": "Payagala South",
+        "note": "Station name corrected",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.9789255,
+          6.5218897
+        ]
+      },
+      "id": "node/92058899"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/92124678",
+        "name": "Dodanduwa",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1328946,
+          6.0981764
+        ]
+      },
+      "id": "node/92124678"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/92126866",
+        "name": "Seenigama",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.094758,
+          6.1586793
+        ]
+      },
+      "id": "node/92126866"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/92126920",
+        "name": "Kahawe",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.073997,
+          6.1831844
+        ]
+      },
+      "id": "node/92126920"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/92128330",
+        "name": "Madampagama",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.0612425,
+          6.2122769
+        ]
+      },
+      "id": "node/92128330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/92128703",
+        "name": "Balapitiya",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.0433723,
+          6.2764631
+        ]
+      },
+      "id": "node/92128703"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/92128815",
+        "name": "Ahungalla",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.0375793,
+          6.3127714
+        ]
+      },
+      "id": "node/92128815"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/92128871",
+        "name": "Kosgoda",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.0294476,
+          6.3385359
+        ]
+      },
+      "id": "node/92128871"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/92129026",
+        "name": "Richmond Hill",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2048071,
+          6.0539303
+        ]
+      },
+      "id": "node/92129026"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/92132195",
+        "abbr_name": "SCR",
+        "name": "Secretariat Halt",
+        "network": "Coastal Line",
+        "operator": "Sri Lanka Railways",
+        "public_transport": "station",
+        "railway": "station",
+        "train": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.8460198,
+          6.9314456
+        ]
+      },
+      "id": "node/92132195"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/191815840",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Asiri Surgical Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.8797172,
+          6.8945486
+        ]
+      },
+      "id": "node/191815840"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/253022237",
+        "amenity": "hospital",
+        "designation": "mother and baby",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "is_in": "Colombo, Colombo District, Western Province, Sri Lanka",
+        "name": "Joseph Fraser Memorial Hospital",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.8652189,
+          6.8952045
+        ]
+      },
+      "id": "node/253022237"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/254367261",
+        "addr:city": "Wethara",
+        "addr:street": "Colombo - Horana Road",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Wethara District Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.9756303,
+          6.7846239
+        ]
+      },
+      "id": "node/254367261"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/254367270",
+        "amenity": "police",
+        "name": "Kahathuduwa Police Station",
+        "opening_hours": "24/7",
+        "operator": "Sri Lanka Police"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.9861254,
+          6.7830852
+        ]
+      },
+      "id": "node/254367270"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/254367469",
+        "amenity": "police",
+        "name": "Horana"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.069091,
+          6.7149037
+        ]
+      },
+      "id": "node/254367469"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/255179653",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Sri Jayawardenapura teaching hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.9261518,
+          6.8683337
+        ]
+      },
+      "id": "node/255179653"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/256026311",
+        "amenity": "bus_station",
+        "name": "CTB  Depot - Horana"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.0751124,
+          6.7219363
+        ]
+      },
+      "id": "node/256026311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/256542350",
+        "addr:city": "Piliyandala",
+        "amenity": "police",
+        "name": "Police Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.9225718,
+          6.8023039
+        ]
+      },
+      "id": "node/256542350"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/258615795",
+        "amenity": "police",
+        "name": "Matale Police Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6262053,
+          7.4626336
+        ]
+      },
+      "id": "node/258615795"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/304322071",
+        "name": "Wanawasala",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.8993572,
+          6.9755509
+        ]
+      },
+      "id": "node/304322071"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/310166807",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "is_in": "Galle, Galle District, Southern Province, Sri Lanka",
+        "name": "Co-op Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2161531,
+          6.0366488
+        ]
+      },
+      "id": "node/310166807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/338554325",
+        "name": "Watagoda",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6528447,
+          6.9688843
+        ]
+      },
+      "id": "node/338554325"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/347323226",
+        "name": "Bujjomuwa",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2106384,
+          7.2731777
+        ]
+      },
+      "id": "node/347323226"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/347323232",
+        "name": "Yaththalgoda",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1943101,
+          7.270437
+        ]
+      },
+      "id": "node/347323232"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/347323242",
+        "addr:street": "Mirigama Rd",
+        "name": "Ambepussa Railway Station",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1693049,
+          7.2559962
+        ]
+      },
+      "id": "node/347323242"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/347323250",
+        "name": "Botale",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1531824,
+          7.2565981
+        ]
+      },
+      "id": "node/347323250"
+    }
+  ]
+}

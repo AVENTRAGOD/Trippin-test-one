@@ -1,0 +1,1497 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-04-24T07:42:43Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/44280965",
+        "is_in": "Badulla District",
+        "name": "Rawana Ella Falls",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.0545278,
+          6.8408548
+        ]
+      },
+      "id": "node/44280965"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/676861111",
+        "name": "Baker's Falls",
+        "waterway": "waterfall",
+        "wikidata": "Q37307"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.789623,
+          6.7925595
+        ]
+      },
+      "id": "node/676861111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1410576898",
+        "amenity": "place_of_worship",
+        "artwork_type": "statue",
+        "name": "Second Samadhi Buddha Statue",
+        "religion": "buddhist",
+        "tourism": "artwork"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.3929702,
+          8.369115
+        ]
+      },
+      "id": "node/1410576898"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1708405577",
+        "addr:city": "Ellepola",
+        "addr:street": "Ratnapura - Wellawaya Road",
+        "name": "Ellepola Ella",
+        "tourism": "viewpoint",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6860466,
+          6.6307993
+        ]
+      },
+      "id": "node/1708405577"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2055187239",
+        "name": "Ramboda Middle Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7013657,
+          7.0545948
+        ]
+      },
+      "id": "node/2055187239"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2141657994",
+        "name": "Thummodara Ranmudu Ella",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1708905,
+          6.8647276
+        ]
+      },
+      "id": "node/2141657994"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2176947342",
+        "name": "Hathmale Ella",
+        "tourism": "viewpoint",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5061691,
+          6.3319645
+        ]
+      },
+      "id": "node/2176947342"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2560262913",
+        "alt_name": "Rathna Falls",
+        "name": "Ratha Ella",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.9245902,
+          7.3746872
+        ]
+      },
+      "id": "node/2560262913"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2611001772",
+        "name": "Moray Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5426007,
+          6.7983418
+        ]
+      },
+      "id": "node/2611001772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2714398571",
+        "name": "Sri Pada Falls (Adam Peak's Falls)",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5487307,
+          6.798623
+        ]
+      },
+      "id": "node/2714398571"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2804314660",
+        "alt_name": "Pahanthudawa Ella",
+        "name": "Pahanthudawa Waterfall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7586422,
+          6.7262161
+        ]
+      },
+      "id": "node/2804314660"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3207148721",
+        "name": "Laxapana Falls",
+        "waterway": "waterfall",
+        "wikidata": "Q6505129"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5009038,
+          6.899106
+        ]
+      },
+      "id": "node/3207148721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3220661583",
+        "name": "Lanka Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8263736,
+          6.7731512
+        ]
+      },
+      "id": "node/3220661583"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3254826636",
+        "name": "Lover's Leap Waterfall",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7867203,
+          6.9784844
+        ]
+      },
+      "id": "node/3254826636"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3301935943",
+        "name": "Dunhinda Falls",
+        "tourism": "attraction",
+        "waterway": "waterfall",
+        "wikidata": "Q38347"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.063492,
+          7.0169435
+        ]
+      },
+      "id": "node/3301935943"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3367873791",
+        "name": "Polomgampala Waterfall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2111563,
+          6.4631371
+        ]
+      },
+      "id": "node/3367873791"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3563664791",
+        "alt_name": "Doowili Ella Waterfall",
+        "name": "Dooli Ella Waterfall",
+        "name:si": "දූලි ඇල්ල",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.392724,
+          6.3919677
+        ]
+      },
+      "id": "node/3563664791"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3563677193",
+        "name": "Brahmana Ella Water Fall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.4527399,
+          6.375223
+        ]
+      },
+      "id": "node/3563677193"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3578062111",
+        "alt_name": "Makeli Ella",
+        "name": "Makeliya Water Fall",
+        "name:si": "මාකෙලි ඇල්ල",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2816914,
+          6.6057951
+        ]
+      },
+      "id": "node/3578062111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3726925126",
+        "addr:city": "Maduwanwela",
+        "alt_name": "Dooli Ella",
+        "name": "Duli ella",
+        "name:si": "දූලි ඇල්ල",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7142063,
+          6.4005822
+        ]
+      },
+      "id": "node/3726925126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3778233726",
+        "name": "Duwili Ella",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.4081589,
+          6.4393538
+        ]
+      },
+      "id": "node/3778233726"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3833099699",
+        "name": "Bomburu Ella",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8306935,
+          6.9473172
+        ]
+      },
+      "id": "node/3833099699"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3975121346",
+        "height": "109",
+        "name": "Ramboda Lower Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6997315,
+          7.0547791
+        ]
+      },
+      "id": "node/3975121346"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4008938797",
+        "name": "Public Beach",
+        "natural": "beach"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.8620623,
+          7.2243994
+        ]
+      },
+      "id": "node/4008938797"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4008938798",
+        "name": "Public Beach",
+        "natural": "beach"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.8640579,
+          7.2497306
+        ]
+      },
+      "id": "node/4008938798"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4008941763",
+        "name": "Public Beach",
+        "natural": "beach"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.8673946,
+          7.290928
+        ]
+      },
+      "id": "node/4008941763"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4430215189",
+        "name": "Ramboda Upper Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7055863,
+          7.0543939
+        ]
+      },
+      "id": "node/4430215189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4439432082",
+        "name": "Marakolliya Beach",
+        "natural": "beach"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8301175,
+          6.0429891
+        ]
+      },
+      "id": "node/4439432082"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4462731780",
+        "addr:city": "Marangahawela",
+        "addr:street": "Colombo - Ratnapura - Wellawaya - Batticaloa Road",
+        "name": "Surathali Ella",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8289666,
+          6.7456821
+        ]
+      },
+      "id": "node/4462731780"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4507978494",
+        "name": "Elgin Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7810229,
+          6.8845413
+        ]
+      },
+      "id": "node/4507978494"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4620035896",
+        "name": "Man Made-Water Fall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.8738338,
+          6.8566235
+        ]
+      },
+      "id": "node/4620035896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4663066094",
+        "name": "Aradunu Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.1527847,
+          6.9546584
+        ]
+      },
+      "id": "node/4663066094"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4698521292",
+        "name": "Devon Watrefall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6297262,
+          6.9517076
+        ]
+      },
+      "id": "node/4698521292"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4823844374",
+        "name": "Kurundu Oya Ella",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8504843,
+          7.0801553
+        ]
+      },
+      "id": "node/4823844374"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4825236007",
+        "name": "Waterfall",
+        "tourism": "viewpoint",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.4864491,
+          6.3710518
+        ]
+      },
+      "id": "node/4825236007"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4848081561",
+        "name": "Gerandi Ella Waterfall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6955484,
+          7.0469328
+        ]
+      },
+      "id": "node/4848081561"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4988352221",
+        "name": "Dewathura Ella",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6988017,
+          7.0590993
+        ]
+      },
+      "id": "node/4988352221"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5080980502",
+        "name": "Saari Ella Water fall",
+        "tourism": "attraction;viewpoint",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7837148,
+          7.4073695
+        ]
+      },
+      "id": "node/5080980502"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5114366649",
+        "height": "12",
+        "intermittent": "yes",
+        "name": "Nochchimoddai Dam",
+        "waterway": "waterfall",
+        "width": "10"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.4966652,
+          8.8127189
+        ]
+      },
+      "id": "node/5114366649"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5166930209",
+        "name": "Yaalathenna Waterfall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8216416,
+          6.772279
+        ]
+      },
+      "id": "node/5166930209"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5166942651",
+        "name": "Uduwara Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8454795,
+          6.7853731
+        ]
+      },
+      "id": "node/5166942651"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5166942652",
+        "name": "Nagadowa Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8437108,
+          6.7871183
+        ]
+      },
+      "id": "node/5166942652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5167045651",
+        "name": "Aggra Waterfall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7834421,
+          6.8286656
+        ]
+      },
+      "id": "node/5167045651"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5176138500",
+        "name": "Hakkunuella Waterfall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5808652,
+          7.4215893
+        ]
+      },
+      "id": "node/5176138500"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5244274525",
+        "name": "laxapana mohine FAlls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5329798,
+          6.8273972
+        ]
+      },
+      "id": "node/5244274525"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5413804743",
+        "height": "70",
+        "name": "Aberdeen Waterfall",
+        "waterway": "waterfall",
+        "width": "5",
+        "wikidata": "Q37408"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5017265,
+          6.9485832
+        ]
+      },
+      "id": "node/5413804743"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5521783765",
+        "name": "Patna Sliding",
+        "waterway": "waterfall",
+        "width": "3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6034081,
+          6.3753423
+        ]
+      },
+      "id": "node/5521783765"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5623867621",
+        "height": "100",
+        "name": "Garandi Gini Ella",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6944897,
+          7.0742148
+        ]
+      },
+      "id": "node/5623867621"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5756356721",
+        "name": "Upper Diyaluma Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.0325087,
+          6.7352354
+        ]
+      },
+      "id": "node/5756356721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5809896557",
+        "addr:city": "Talawakele",
+        "addr:street": "Hatton - Nuwara Eliya Road",
+        "name": "St. Clair Falls",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6481451,
+          6.9513704
+        ]
+      },
+      "id": "node/5809896557"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5928410811",
+        "name": "Silver Beach",
+        "natural": "beach"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.7874746,
+          7.5791383
+        ]
+      },
+      "id": "node/5928410811"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6290248873",
+        "name": "Small Rawana Waterfall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.0441999,
+          6.8628421
+        ]
+      },
+      "id": "node/6290248873"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6324862485",
+        "name": "Gartmore Waterfall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5621269,
+          6.7809582
+        ]
+      },
+      "id": "node/6324862485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6533610497",
+        "name": "Bambarakanda Waterfall",
+        "waterway": "waterfall",
+        "wikidata": "Q37540"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8312654,
+          6.7733833
+        ]
+      },
+      "id": "node/6533610497"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6533610507",
+        "name": "Upper Bambarakanda Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8311072,
+          6.7742969
+        ]
+      },
+      "id": "node/6533610507"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6579920169",
+        "height": "20",
+        "intermittent": "no",
+        "name": "Ganthuna Ella",
+        "waterway": "waterfall",
+        "width": "10"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.4059143,
+          7.1178063
+        ]
+      },
+      "id": "node/6579920169"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6604712570",
+        "amenity": "place_of_worship",
+        "name": "Thilanka Hotel",
+        "phone": "+94 81 4 475200",
+        "religion": "buddhist",
+        "tourism": "hotel",
+        "url": "thilankahotel.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6497872,
+          7.2926445
+        ]
+      },
+      "id": "node/6604712570"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7373309394",
+        "name": "Handapan Ella Falls",
+        "name:si": "හඳපාන් ඇල්ල",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5835822,
+          6.444556
+        ]
+      },
+      "id": "node/7373309394"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7684607810",
+        "name": "Nonpareil Estate Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7882256,
+          6.7571792
+        ]
+      },
+      "id": "node/7684607810"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7858785325",
+        "name": "Panama Beach",
+        "natural": "beach",
+        "surface": "sand"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.8256521,
+          6.7665075
+        ]
+      },
+      "id": "node/7858785325"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7988141619",
+        "name": "Kirawanagama Falls",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.9317772,
+          6.7333028
+        ]
+      },
+      "id": "node/7988141619"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8393826265",
+        "name": "Thepulangoda Waterfall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.3938741,
+          6.7283842
+        ]
+      },
+      "id": "node/8393826265"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9125422618",
+        "image": "https://photos.app.goo.gl/1yKTzsyZuBqMQ7mj7",
+        "name": "Andahelena Ella",
+        "name:si": "අඬාහැලෙන ඇල්ල",
+        "tourism": "attraction",
+        "url": "https://youtu.be/y1ppR7KQ5ps?si=vyYDrXxGAdzFIbQq&t=337",
+        "url:0": "https://youtu.be/kj6S2PJo0NM?si=3_QbCXP381sQ9rry&t=475",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.197338,
+          6.2586051
+        ]
+      },
+      "id": "node/9125422618"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9125555013",
+        "alt_name": "බන්ට් එක",
+        "name": "Kiridola",
+        "name:si": "කිරිදොල",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2154718,
+          6.2916365
+        ]
+      },
+      "id": "node/9125555013"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9128405980",
+        "name": "Raja Wetunu Ella",
+        "name:si": "රාජා වැටුනු ඇල්ල",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5445628,
+          6.374451
+        ]
+      },
+      "id": "node/9128405980"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9133167330",
+        "name": "Pareiyan Ella Falls",
+        "name:si": "පරෙයියන් ඇල්ල",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.2373371,
+          6.8499267
+        ]
+      },
+      "id": "node/9133167330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9139743528",
+        "name": "Deyyagala Dola",
+        "name:si": "දෙයියාගල දොළ",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1842516,
+          6.3713083
+        ]
+      },
+      "id": "node/9139743528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9150634346",
+        "name": "Kalu Dola Ella",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2370436,
+          6.3745281
+        ]
+      },
+      "id": "node/9150634346"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9278526293",
+        "name": "Pebotuwa Ella",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.4602359,
+          6.5345264
+        ]
+      },
+      "id": "node/9278526293"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9278526294",
+        "name": "Eli Hatha",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.4942708,
+          6.5126876
+        ]
+      },
+      "id": "node/9278526294"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9606186707",
+        "name": "Diyaluma Falls",
+        "waterway": "waterfall",
+        "wikidata": "Q37549"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.031448,
+          6.733071
+        ]
+      },
+      "id": "node/9606186707"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10564488333",
+        "name": "Twin Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5937135,
+          6.3858216
+        ]
+      },
+      "id": "node/10564488333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10564490522",
+        "name": "Badura Fall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.586792,
+          6.3901927
+        ]
+      },
+      "id": "node/10564490522"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11133963006",
+        "name": "Knuckles Waterfall",
+        "tourism": "viewpoint;attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.797356,
+          7.4031271
+        ]
+      },
+      "id": "node/11133963006"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11368887169",
+        "fixme": "add to stream",
+        "name": "Dthaaloya waterfall",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.4358488,
+          7.1199283
+        ]
+      },
+      "id": "node/11368887169"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11583843280",
+        "name": "Jodu Ella Water Falls",
+        "tourism": "attraction",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.775762,
+          7.4004888
+        ]
+      },
+      "id": "node/11583843280"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12536254092",
+        "name": "Upper Gartmore Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5592226,
+          6.7786554
+        ]
+      },
+      "id": "node/12536254092"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12554991001",
+        "name": "නා ඇල්ල",
+        "name:en": "Na Ella",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8679841,
+          7.4110025
+        ]
+      },
+      "id": "node/12554991001"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12566072434",
+        "name": "Slab Rock Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7925286,
+          6.7963095
+        ]
+      },
+      "id": "node/12566072434"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12566156398",
+        "alt_name": "Kathigahana Ella",
+        "name": "Galagama Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7713245,
+          6.7692498
+        ]
+      },
+      "id": "node/12566156398"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12566173039",
+        "name": "Solo Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.790437,
+          6.7587642
+        ]
+      },
+      "id": "node/12566173039"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12566216771",
+        "name": "Gennariya Falls",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8316652,
+          6.7794797
+        ]
+      },
+      "id": "node/12566216771"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12568464423",
+        "name": "Awesome Beach and Dunes",
+        "natural": "beach",
+        "tourism": "attraction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.7332496,
+          8.2316679
+        ]
+      },
+      "id": "node/12568464423"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12574102702",
+        "name": "Muthupanthiya beach",
+        "natural": "beach"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.7962265,
+          7.7100696
+        ]
+      },
+      "id": "node/12574102702"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12585161277",
+        "name": "Dehiwala Beach",
+        "natural": "beach"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.859617,
+          6.8607018
+        ]
+      },
+      "id": "node/12585161277"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13098242412",
+        "height": "20",
+        "name": "Dumbara Ella",
+        "name:si": "දුම්බර ඇල්ල",
+        "source": "https://amazinglanka.com/wp/dumbara-ella/",
+        "waterway": "waterfall",
+        "width": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7918641,
+          7.4698061
+        ]
+      },
+      "id": "node/13098242412"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13098242417",
+        "height": "40",
+        "name": "Duwili Ella",
+        "waterway": "waterfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.8008878,
+          7.4618343
+        ]
+      },
+      "id": "node/13098242417"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13718452127",
+        "name": "Kirinde Beach",
+        "natural": "beach"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.3378188,
+          6.2172007
+        ]
+      },
+      "id": "node/13718452127"
+    }
+  ]
+}
