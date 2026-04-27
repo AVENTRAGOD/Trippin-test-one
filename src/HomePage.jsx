@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Waves, Binoculars, Fish, Mountain, Coffee, Anchor, 
-  Menu, X
+  Menu, X, ChevronDown
 } from 'lucide-react';
 
 const provincesData = [
@@ -124,10 +124,10 @@ export default function HomePage() {
   }, []);
 
   const navLinks = [
-    { name: "Things To Do", path: "/#thingstodo" },
-    { name: "Explore Map", path: "/map" },
-    { name: "Where To Go", path: "/#explore" },
-    { name: "Plan Your Trip", path: "/#about" }
+    { name: "Home", path: "/" },
+    { name: "Interactive Map", path: "/map" },
+    { name: "Experiences", path: "/experiences" },
+    { name: "About", path: "/about" }
   ];
 
   return (
@@ -135,39 +135,37 @@ export default function HomePage() {
       
       {/* NAVBAR */}
       <nav 
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-[#FFFFFF] shadow-lg py-3' : 'bg-transparent py-5'
-        }`}
+        className={`fixed w-full z-50 transition-all duration-300 bg-white shadow-sm py-4`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0 cursor-pointer">
+          <Link to="/" className="flex-shrink-0 cursor-pointer flex items-center">
             <img 
-              src="/logo.png" 
-              alt="Visit Sri Lanka Logo" 
-              className="h-10 w-auto object-contain"
+              src="/tripin_logo.png" 
+              alt="Trippin Logo" 
+              className="h-16 w-auto object-contain mix-blend-multiply transition-all duration-300"
             />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex space-x-8">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
                 to={link.path}
-                className={`text-sm font-medium tracking-wide relative group ${isScrolled ? 'text-[#33353D]' : 'text-[#FFFFFF]'}`}
+                className="text-sm font-medium tracking-wide relative group text-[#33353D]"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#4A4D55] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#F05442] transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`focus:outline-none ${isScrolled ? 'text-[#33353D]' : 'text-white'}`}
+              className="focus:outline-none text-[#33353D]"
             >
               {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -176,7 +174,7 @@ export default function HomePage() {
 
         {/* Mobile Nav Drawer */}
         <div 
-          className={`md:hidden absolute top-full left-0 w-full bg-[#2A2B31] transition-all duration-300 origin-top overflow-hidden ${
+          className={`lg:hidden absolute top-full left-0 w-full bg-[#2A2B31] transition-all duration-300 origin-top overflow-hidden ${
             mobileMenuOpen ? 'max-h-[300px] py-4' : 'max-h-0 py-0'
           }`}
         >
@@ -206,130 +204,177 @@ export default function HomePage() {
             muted 
             playsInline
             className="w-full h-full object-cover"
-            src="/hero-video.mp4" 
+            src="/main_vid.mp4" 
           />
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-[#33353D] bg-opacity-55"></div>
+          {/* Enhanced Overlay for Professional Look */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/60"></div>
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center">
           <FadeInSection>
-            <h1 className="font-playfair font-bold text-5xl md:text-7xl lg:text-[96px] text-[#FFFFFF] mb-4 drop-shadow-lg leading-tight">
-              Discover Sri Lanka
+            <h1 className="font-playfair font-bold text-5xl md:text-7xl lg:text-[100px] text-white mb-6 drop-shadow-2xl leading-[1.1] tracking-tight">
+              Explore the Wonder <br className="hidden md:block" /> of Asia
             </h1>
-            <p className="font-inter text-lg md:text-[22px] text-[#FFFFFF] tracking-[0.2em] mb-12 uppercase drop-shadow-md">
-              The Pearl of the Indian Ocean
+            <p className="font-inter text-lg md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed mb-12 drop-shadow-lg font-light">
+              Discover pristine beaches, ancient cultures, and breathtaking wildlife in Sri Lanka.
             </p>
-            <button className="border-2 border-[#FFFFFF] text-[#FFFFFF] hover:bg-[#F05442] hover:border-[#F05442] hover:text-[#FFFFFF] px-10 py-4 rounded-full font-medium transition-all duration-300 transform hover:scale-105">
-              Start Your Journey &rarr;
-            </button>
-          </FadeInSection>
-        </div>
-      </section>
+            <div className="flex flex-col items-center gap-20">
+              <button 
+                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group relative border border-white/30 bg-white/10 backdrop-blur-md text-white hover:bg-white hover:text-black px-12 py-4 rounded-full font-medium transition-all duration-500 overflow-hidden"
+              >
+                <span className="relative z-10">Start Your Journey</span>
+                <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+              </button>
 
-      {/* SECTION 2 - ABOUT */}
-      <section id="about" className="py-24 bg-[#FAFAFA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeInSection>
-            <div className="flex flex-col md:flex-row gap-12 items-center">
-              {/* Left Col */}
-              <div className="w-full md:w-1/2">
-                <h2 className="font-playfair font-bold text-4xl md:text-5xl text-[#2A2B31] mb-4">
-                  About Sri Lanka
-                </h2>
-                <div className="h-1 w-[60px] bg-[#4A4D55]"></div>
-              </div>
-              
-              {/* Right Col */}
-              <div className="w-full md:w-1/2 space-y-6">
-                <h3 className="font-playfair text-2xl md:text-3xl text-[#2A2B31]">
-                  An Island of Wonders
-                </h3>
-                <p className="font-inter text-[#33353D] leading-relaxed text-lg">
-                  Sri Lanka is a land of breathtaking diversity — from ancient temples
-                  and lush rainforests to pristine beaches and misty highlands. Every
-                  corner of this island holds a story waiting to be discovered.
-                </p>
-                <button className="bg-[#F05442] text-[#FFFFFF] hover:bg-[#2A2B31] px-8 py-3 rounded-full font-medium transition-colors duration-300">
-                  Explore More &rarr;
-                </button>
+              {/* Scroll Down Arrow */}
+              <div 
+                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                className="animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity"
+              >
+                <ChevronDown size={40} className="text-white" />
               </div>
             </div>
           </FadeInSection>
         </div>
       </section>
 
-      {/* SECTION 3 - INTERACTIVE MAP */}
-      <section id="explore" className="py-24 bg-[#FFFFFF]">
+      {/* SECTION 2 - ABOUT */}
+      <section id="about" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInSection>
-            <h2 className="font-playfair font-bold text-3xl md:text-[42px] text-[#2A2B31] text-center mb-16">
-              Explore Sri Lanka by Province
-            </h2>
+            <div className="flex flex-col lg:flex-row gap-16 items-center">
+              {/* Left Column: Content & Stats */}
+              <div className="w-full lg:w-1/2 space-y-10">
+                <div className="space-y-6">
+                  <p className="font-inter text-[#10B981] font-bold tracking-[0.2em] text-sm uppercase">
+                    About Sri Lanka
+                  </p>
+                  <h2 className="font-playfair font-bold text-4xl md:text-6xl text-[#1A1C1E] leading-tight">
+                    A Pearl in the <br /> Indian Ocean
+                  </h2>
+                  <div className="space-y-6">
+                    <p className="font-inter text-[#4A4D55] text-lg leading-relaxed font-light">
+                      Sri Lanka is an island nation celebrated for its immense natural beauty, rich history, and warm hospitality. From the misty tea-covered hills of the central highlands to the sun-kissed beaches encircling the island, there is an adventure waiting for every traveler.
+                    </p>
+                    <p className="font-inter text-[#4A4D55] text-lg leading-relaxed font-light">
+                      Experience a vibrant culture shaped by over 2,500 years of history, encounter incredible wildlife, and savor a unique culinary heritage that will tantalize your taste buds.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Stats Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="bg-[#F8FAFC] border border-[#E2E8F0] p-6 rounded-2xl text-center hover:shadow-lg transition-shadow duration-300">
+                    <p className="font-playfair font-bold text-3xl text-[#10B981]">8</p>
+                    <p className="font-inter text-[10px] font-bold text-[#64748B] uppercase tracking-widest mt-1">UNESCO Sites</p>
+                  </div>
+                  <div className="bg-[#F8FAFC] border border-[#E2E8F0] p-6 rounded-2xl text-center hover:shadow-lg transition-shadow duration-300">
+                    <p className="font-playfair font-bold text-3xl text-[#10B981]">1330km</p>
+                    <p className="font-inter text-[10px] font-bold text-[#64748B] uppercase tracking-widest mt-1">Coastline</p>
+                  </div>
+                  <div className="bg-[#F8FAFC] border border-[#E2E8F0] p-6 rounded-2xl text-center hover:shadow-lg transition-shadow duration-300">
+                    <p className="font-playfair font-bold text-3xl text-[#10B981]">22+</p>
+                    <p className="font-inter text-[10px] font-bold text-[#64748B] uppercase tracking-widest mt-1">National Parks</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Right Column: Hero Image */}
+              <div className="w-full lg:w-1/2">
+                <div className="relative group">
+                  <div className="absolute -inset-4 bg-[#10B981]/10 rounded-[2rem] blur-xl group-hover:bg-[#10B981]/20 transition-all duration-500"></div>
+                  <img 
+                    src="/sigiriya.jpg" 
+                    alt="Sigiriya Rock Fortress" 
+                    className="relative rounded-3xl w-full h-[400px] sm:h-[600px] object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
+                  {/* Decorative element */}
+                  <div className="absolute bottom-8 right-8 bg-white/90 backdrop-blur-md px-6 py-4 rounded-2xl shadow-xl border border-white/50">
+                    <p className="font-playfair italic text-[#1A1C1E] text-lg">"The Eighth Wonder of the World"</p>
+                    <p className="font-inter text-xs text-[#64748B] mt-1 font-semibold uppercase tracking-widest">— Sigiriya, Sri Lanka</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* SECTION 3 - INTERACTIVE RED MAP */}
+      <section id="explore" className="py-24 bg-[#FAFAFA] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeInSection>
+            <div className="text-center mb-16 space-y-4 px-4">
+              <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A1C1E]">
+                The Province Explorer
+              </h2>
+              <div className="h-1.5 w-24 bg-[#F05442] mx-auto rounded-full"></div>
+              <p className="font-inter text-[#64748B] text-lg max-w-2xl mx-auto font-light">
+                Click on the provinces below to discover the unique heritage and hidden gems of every corner of the island.
+              </p>
+            </div>
             
-            <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
-              {/* Left: SVG Map */}
-              <div className="w-full lg:w-1/2 flex justify-center">
-                <svg viewBox="0 0 700 700" className="w-full max-w-sm h-auto drop-shadow-xl">
+            <div className="flex flex-col lg:flex-row gap-16 items-center justify-center">
+              {/* Left: SVG Map (God Tier Styling) */}
+              <div className="w-full lg:w-1/2 flex justify-center relative">
+                <div className="absolute inset-0 bg-[#F05442]/5 blur-[100px] rounded-full"></div>
+                <svg viewBox="0 0 500 750" className="w-full max-w-md h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)] relative z-10">
                   {provincesData.map((prov) => {
                     const isSelected = selectedProvince.id === prov.id;
                     return (
-                      <g key={prov.id} className="cursor-pointer" onClick={() => setSelectedProvince(prov)}>
+                      <g 
+                        key={prov.id} 
+                        className="cursor-pointer transition-all duration-500" 
+                        onClick={() => setSelectedProvince(prov)}
+                      >
                         {prov.paths && prov.paths.map((pPath, idx) => (
                           <path 
                             key={idx}
                             d={pPath}
-                            fill={isSelected ? "#F05442" : "#F5F5F5"}
-                            stroke="#2A2B31"
-                            strokeWidth="1.5"
-                            className="transition-all duration-300 hover:fill-[#4A4D55]"
+                            fill={isSelected ? "#F05442" : "#FFFFFF"}
+                            stroke={isSelected ? "#F05442" : "#E2E8F0"}
+                            strokeWidth={isSelected ? "2" : "1.5"}
+                            className="transition-all duration-500 ease-in-out hover:fill-[#F05442]/80 hover:stroke-[#F05442]"
+                            style={{ filter: isSelected ? 'drop-shadow(0 0 8px rgba(240, 84, 66, 0.4))' : 'none' }}
                           />
                         ))}
-                        {isSelected && (
-                          // Simplified label positioning by calculating center of path or just fixed offset
-                          <text 
-                            x="150" 
-                            y="200" 
-                            textAnchor="middle" 
-                            fill="#FFFFFF" 
-                            className="font-inter text-xs pointer-events-none drop-shadow-md font-bold"
-                          >
-                            {/* We just show a generalized pin or label, since actual path centers are hard to compute without math. Instead let's let the card show the name. */}
-                          </text>
-                        )}
                       </g>
                     );
                   })}
                 </svg>
               </div>
 
-              {/* Right: Info Card */}
-              <div className="w-full lg:w-1/2">
-                <div className="bg-[#FFFFFF] border-l-4 border-[#2A2B31] rounded-xl shadow-lg p-8 transition-all duration-500 transform">
-                  <p className="font-inter text-[#4A4D55] tracking-widest text-sm font-semibold uppercase mb-2">
-                    SRI LANKA PROVINCES
+              {/* Right: Info Card (God Tier Card Design) */}
+              <div className="w-full lg:w-1/2 px-4">
+                <div className="bg-white rounded-[2rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] p-6 sm:p-10 border border-[#E2E8F0] relative overflow-hidden group">
+                  {/* Decorative background element */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#F05442]/5 rounded-bl-[4rem] -mr-8 -mt-8 transition-transform duration-700 group-hover:scale-110"></div>
+                  
+                  <p className="font-inter text-[#F05442] tracking-widest text-xs font-bold uppercase mb-4">
+                    Province Spotlight
                   </p>
-                  <h3 className="font-playfair font-bold text-3xl md:text-[36px] text-[#2A2B31] mb-4">
-                    {selectedProvince.name} Province
+                  <h3 className="font-playfair font-bold text-2xl sm:text-4xl text-[#1A1C1E] mb-6">
+                    {selectedProvince.name} <span className="text-[#F05442]">Province</span>
                   </h3>
-                  <p className="font-inter text-[#33353D] mb-8 leading-relaxed">
+                  <p className="font-inter text-[#4A4D55] mb-10 leading-relaxed text-lg font-light">
                     {selectedProvince.description}
                   </p>
                   
-                  <div className="mb-8">
-                    <p className="font-inter text-sm font-semibold text-[#33353D] mb-3">Known for:</p>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="mb-10">
+                    <p className="font-inter text-sm font-bold text-[#1A1C1E] mb-4 uppercase tracking-widest">Key Highlights</p>
+                    <div className="flex flex-wrap gap-3">
                       {selectedProvince.knownFor.map((item, i) => (
-                        <span key={i} className="bg-[#D84230] text-[#FFFFFF] px-4 py-1.5 rounded-full text-sm">
+                        <span key={i} className="bg-[#F8FAFC] text-[#4A4D55] px-5 py-2.5 rounded-xl text-sm font-medium border border-[#E2E8F0] hover:border-[#F05442] hover:text-[#F05442] transition-colors duration-300">
                           {item}
                         </span>
                       ))}
                     </div>
                   </div>
 
-                  <button className="bg-[#F05442] text-[#FFFFFF] hover:bg-[#2A2B31] px-8 py-3 rounded-full font-medium transition-colors duration-300 w-full sm:w-auto">
-                    Explore the Region &rarr;
+                  <button className="bg-[#1A1C1E] text-white hover:bg-[#F05442] px-10 py-4 rounded-full font-medium transition-all duration-300 w-full sm:w-auto shadow-lg hover:shadow-[#F05442]/30 transform hover:-translate-y-1">
+                    Explore Deeply &rarr;
                   </button>
                 </div>
               </div>
@@ -338,187 +383,327 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 4 - BIODIVERSITY */}
-      <section id="biodiversity" className="py-24 bg-[#F5F5F5]">
+      {/* SECTION 4 - BIODIVERSITY (New Design) */}
+      <section id="biodiversity" className="py-24 bg-[#1A3C34] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInSection>
-            <div className="flex flex-col lg:flex-row gap-12 items-center">
-              {/* Left: Image */}
-              <div className="w-full lg:w-1/2">
-                <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sri_Lanka_Leopard.jpg/800px-Sri_Lanka_Leopard.jpg" 
-                  alt="Sri Lankan Leopard" 
-                  className="rounded-2xl border-2 border-[#2A2B31] w-full h-auto object-cover shadow-2xl"
-                />
-              </div>
-
-              {/* Right: Content */}
-              <div className="w-full lg:w-1/2 space-y-6">
-                <p className="font-inter text-[#4A4D55] tracking-widest text-sm font-bold uppercase">
-                  WILDLIFE & NATURE
-                </p>
-                <h2 className="font-playfair font-bold text-3xl md:text-[36px] text-[#2A2B31]">
-                  Sri Lanka's Rich Biodiversity
-                </h2>
-                <div className="h-1 w-24 bg-[#D84230]"></div>
-                <p className="font-inter text-[#33353D] leading-relaxed text-lg pb-4">
-                  Did you know? Sri Lanka protects over 26% of its land as wildlife reserves. 
-                  Home to leopards, blue whales, and hundreds of endemic bird species, this 
-                  island is one of Asia's greatest natural treasures.
-                </p>
-                
-                <div className="flex flex-wrap gap-4">
-                  <div className="bg-[#D84230] text-[#FFFFFF] px-5 py-2.5 rounded-full font-medium shadow-md">
-                    26% Protected Land
-                  </div>
-                  <div className="bg-[#F05442] text-[#FFFFFF] px-5 py-2.5 rounded-full font-medium shadow-md">
-                    400+ Bird Species
-                  </div>
-                  <div className="bg-[#2A2B31] text-[#FFFFFF] px-5 py-2.5 rounded-full font-medium shadow-md">
-                    Endemic Wildlife
-                  </div>
-                </div>
-              </div>
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
-
-      {/* SECTION 5 - CULTURE */}
-      <section id="culture" className="py-24 bg-[#FFFFFF]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeInSection>
-            <div className="text-center mb-16">
-              <h2 className="font-playfair font-bold text-3xl md:text-[42px] text-[#2A2B31] mb-4">
-                Rich Culture & Heritage
+            <div className="mb-16 space-y-4">
+              <p className="font-inter text-[#62D3B4] font-bold tracking-[0.2em] text-sm uppercase">
+                Wild Beauty
+              </p>
+              <h2 className="font-playfair font-bold text-3xl md:text-6xl text-white leading-tight">
+                Biodiversity of Sri Lanka
               </h2>
-              <div className="h-1 w-[80px] bg-[#4A4D55] mx-auto"></div>
+              <p className="font-inter text-white/80 text-lg max-w-3xl leading-relaxed font-light">
+                Despite its small size, Sri Lanka boasts one of the highest rates of biological endemism in the world. It is recognized as a global biodiversity hotspot.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Ancient Temples",
-                  desc: "Discover centuries-old Buddhist stupas and sacred relics in the Cultural Triangle.",
-                  img: "https://images.unsplash.com/photo-1583002621021-f09b55502677?auto=format&fit=crop&w=600&q=80"
-                },
-                {
-                  title: "Kandyan Dance",
-                  desc: "Experience the vibrant costumes and rhythmic drum beats of traditional Sri Lankan dance.",
-                  img: "https://images.unsplash.com/photo-1627885449557-41b9e2ba9e57?auto=format&fit=crop&w=600&q=80"
-                },
-                {
-                  title: "Batik & Crafts",
-                  desc: "Explore intricate handcrafted arts, from vibrant batik textiles to detailed wood carvings.",
-                  img: "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=600&q=80"
-                }
-              ].map((card, idx) => (
-                <div 
-                  key={idx}
-                  className="bg-[#FAFAFA] border border-[#F5F5F5] rounded-2xl overflow-hidden group hover:scale-105 hover:border-[#2A2B31] hover:shadow-2xl transition-all duration-300 flex flex-col"
-                >
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={card.img} 
-                      alt={card.title} 
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
-                  <div className="p-6 flex-grow flex flex-col justify-between">
-                    <div>
-                      <h3 className="font-playfair font-bold text-[22px] text-[#2A2B31] mb-3">
-                        {card.title}
-                      </h3>
-                      <p className="font-inter text-[#33353D] text-[14px] leading-relaxed mb-6">
-                        {card.desc}
-                      </p>
-                    </div>
-                    <a href="#" className="inline-flex items-center text-[#D84230] font-medium text-sm group/link">
-                      Discover more <span className="ml-1 group-hover/link:translate-x-1 transition-transform">&rarr;</span>
-                    </a>
-                  </div>
+              {/* Card 1: Majestic Elephants */}
+              <div className="bg-[#244A41] rounded-[2rem] overflow-hidden border border-white/10 group hover:shadow-2xl hover:shadow-black/20 transition-all duration-500">
+                <div className="h-64 overflow-hidden">
+                  <img 
+                    src="/elepents.jpg" 
+                    alt="Sri Lankan Elephants" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
                 </div>
-              ))}
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
-
-      {/* SECTION 6 - ACTIVITIES */}
-      <section id="thingstodo" className="py-24 bg-[#F05442]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeInSection>
-            <div className="text-center mb-16">
-              <h2 className="font-playfair font-bold text-3xl md:text-[42px] text-[#FFFFFF] mb-4">
-                Top Activities in Sri Lanka
-              </h2>
-              <div className="h-1 w-[80px] bg-[#FFFFFF] mx-auto"></div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {[
-                { title: "Surfing", icon: Waves, desc: "Ride world-class waves at Arugam Bay and Weligama" },
-                { title: "Wildlife Safari", icon: Binoculars, desc: "Spot leopards and elephants at Yala National Park" },
-                { title: "Whale Watching", icon: Fish, desc: "Witness blue whales off the coast of Mirissa" },
-                { title: "Hiking", icon: Mountain, desc: "Trek through misty highlands and Ella Rock" },
-                { title: "Tea Tours", icon: Coffee, desc: "Explore lush plantations in Nuwara Eliya" },
-                { title: "Scuba Diving", icon: Anchor, desc: "Discover coral reefs around Pigeon Island" }
-              ].map((activity, idx) => (
-                <div 
-                  key={idx}
-                  className="bg-[#FFFFFF] border-t-4 border-[#4A4D55] rounded-xl shadow-md p-6 hover:bg-[#F5F5F5] hover:scale-105 hover:shadow-xl transition-all duration-300"
-                >
-                  <activity.icon className="text-[#2A2B31] w-8 h-8 mb-4" />
-                  <h3 className="font-playfair font-bold text-[18px] text-[#2A2B31] mb-2">
-                    {activity.title}
-                  </h3>
-                  <p className="font-inter text-[#33353D] text-[14px]">
-                    {activity.desc}
+                <div className="p-8 space-y-4">
+                  <h3 className="font-playfair font-bold text-2xl text-white">Majestic Elephants</h3>
+                  <p className="font-inter text-white/70 text-sm leading-relaxed">
+                    Home to the Asian elephant. Minneriya National Park hosts the 'Gathering', where hundreds of elephants congregate.
                   </p>
                 </div>
-              ))}
+              </div>
+
+              {/* Card 2: Sigiriya Sanctuary */}
+              <div className="bg-[#244A41] rounded-[2rem] overflow-hidden border border-white/10 group hover:shadow-2xl hover:shadow-black/20 transition-all duration-500">
+                <div className="h-64 overflow-hidden">
+                  <img 
+                    src="/sigiriya_drone_view.jpg" 
+                    alt="Sigiriya Drone View" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
+                <div className="p-8 space-y-4">
+                  <h3 className="font-playfair font-bold text-2xl text-white">Ancient Sigiriya</h3>
+                  <p className="font-inter text-white/70 text-sm leading-relaxed">
+                    A UNESCO World Heritage site surrounded by lush jungles, showcasing the perfect harmony between ancient architecture and nature.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3: Marine Life */}
+              <div className="bg-[#244A41] rounded-[2rem] overflow-hidden border border-white/10 group hover:shadow-2xl hover:shadow-black/20 transition-all duration-500">
+                <div className="h-64 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Marine Life Sri Lanka" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
+                <div className="p-8 space-y-4">
+                  <h3 className="font-playfair font-bold text-2xl text-white">Marine Life</h3>
+                  <p className="font-inter text-white/70 text-sm leading-relaxed">
+                    The waters around Sri Lanka are home to blue whales, sperm whales, dolphins, and endangered sea turtles.
+                  </p>
+                </div>
+              </div>
             </div>
           </FadeInSection>
         </div>
       </section>
 
-      {/* SECTION 7 - FOOTER */}
-      <footer className="bg-[#2A2B31] pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+      {/* SECTION 5 - CULTURE (New Design) */}
+      <section id="culture" className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeInSection>
+            <div className="flex flex-col lg:flex-row gap-16 items-center">
+              {/* Left Column: Image Mosaic */}
+              <div className="w-full lg:w-3/5 grid grid-cols-2 gap-4">
+                <div className="space-y-4">
+                  <div className="rounded-3xl overflow-hidden shadow-xl">
+                    <img 
+                      src="/tempal.jpg" 
+                      alt="Ancient Temple" 
+                      className="w-full h-48 sm:h-64 object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="rounded-3xl overflow-hidden shadow-xl">
+                    <img 
+                      src="/sigiriya_d_view_2.jpg" 
+                      alt="Sigiriya View" 
+                      className="w-full h-64 sm:h-80 object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                </div>
+                <div className="rounded-3xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/dancer.jpg" 
+                    alt="Traditional Dancer" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+
+              {/* Right Column: Cultural Content */}
+              <div className="w-full lg:w-2/5 space-y-8">
+                <div className="space-y-4">
+                  <p className="font-inter text-[#F05442] font-bold tracking-[0.2em] text-sm uppercase">
+                    Rich Heritage
+                  </p>
+                  <h2 className="font-playfair font-bold text-3xl md:text-6xl text-[#1A1C1E] leading-tight">
+                    A Tapestry of Culture
+                  </h2>
+                </div>
+
+                <p className="font-inter text-[#4A4D55] text-lg leading-relaxed font-light">
+                  Sri Lanka's culture is a vibrant blend of traditions, influenced by Buddhism, Hinduism, and colonial history. From colorful festivals and traditional Kandyan dancing to the spicy aromas of its unique cuisine, the island offers a deeply immersive cultural experience.
+                </p>
+
+                <ul className="space-y-4">
+                  {[
+                    "Ancient Ruined Cities of Anuradhapura and Polonnaruwa",
+                    "The Sacred Temple of the Tooth Relic in Kandy",
+                    "Rock Fortress of Sigiriya",
+                    "Vibrant Festivals like Esala Perahera"
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 group">
+                      <div className="mt-2 w-2 h-2 rounded-full bg-[#F05442] group-hover:scale-150 transition-transform duration-300"></div>
+                      <span className="font-inter text-[#1A1C1E] font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* SECTION 6 - THINGS TO DO (Enhanced Design) */}
+      <section id="thingstodo" className="py-24 bg-[#FAFAFA] relative overflow-hidden">
+        {/* Background Watermark */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none">
+          <h2 className="text-[15vw] font-playfair font-bold text-black/[0.03] whitespace-nowrap">
+            EXPLORE SRI LANKA
+          </h2>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <FadeInSection>
+            <div className="text-center mb-20 space-y-4">
+              <p className="font-inter text-[#F05442] font-bold tracking-[0.3em] text-sm uppercase">
+                Experiences
+              </p>
+              <h2 className="font-playfair font-bold text-3xl md:text-6xl text-[#1A1C1E]">
+                Things to Do
+              </h2>
+              <div className="h-1 w-20 bg-[#F05442] mx-auto mt-6"></div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              {/* Card 1: Surfing & Beaches */}
+              <div className="space-y-6 group cursor-pointer">
+                <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] bg-white">
+                  <img 
+                    src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Surfing in Sri Lanka" 
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  />
+                </div>
+                <div className="space-y-3 px-2">
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#F05442] uppercase">Adventure</span>
+                  <h3 className="font-playfair font-bold text-2xl text-[#1A1C1E] group-hover:text-[#F05442] transition-colors">Surfing & Beaches</h3>
+                  <p className="font-inter text-[#64748B] text-[15px] leading-relaxed">
+                    Catch world-class waves in Arugam Bay or relax on the golden shores of Mirissa and Unawatuna.
+                  </p>
+                  <div className="pt-2 flex items-center text-sm font-bold text-[#1A1C1E] group-hover:gap-2 transition-all">
+                    <span>Discover More</span>
+                    <span className="opacity-0 group-hover:opacity-100 transition-all">&rarr;</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2: Tea Country Trails */}
+              <div className="space-y-6 group cursor-pointer">
+                <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] bg-white">
+                  <img 
+                    src="/tea_trails.png" 
+                    alt="Tea Estates Sri Lanka" 
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  />
+                </div>
+                <div className="space-y-3 px-2">
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#F05442] uppercase">Nature</span>
+                  <h3 className="font-playfair font-bold text-2xl text-[#1A1C1E] group-hover:text-[#F05442] transition-colors">Tea Country Trails</h3>
+                  <p className="font-inter text-[#64748B] text-[15px] leading-relaxed">
+                    Hike through lush emerald tea estates in Nuwara Eliya and enjoy the famous Ceylon tea.
+                  </p>
+                  <div className="pt-2 flex items-center text-sm font-bold text-[#1A1C1E] group-hover:gap-2 transition-all">
+                    <span>Explore Trails</span>
+                    <span className="opacity-0 group-hover:opacity-100 transition-all">&rarr;</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3: Historical Exploration */}
+              <div className="space-y-6 group cursor-pointer relative">
+                {/* Decorative Coordinate */}
+                <div className="absolute -top-4 -right-4 text-[10px] font-mono text-black/20 rotate-90 select-none">
+                  6.0333° N, 80.2167° E
+                </div>
+                <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] bg-white">
+                  <img 
+                    src="/gallefort.jpg" 
+                    alt="Galle Fort Sri Lanka" 
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  />
+                </div>
+                <div className="space-y-3 px-2">
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#F05442] uppercase">Heritage</span>
+                  <h3 className="font-playfair font-bold text-2xl text-[#1A1C1E] group-hover:text-[#F05442] transition-colors">Historical Exploration</h3>
+                  <p className="font-inter text-[#64748B] text-[15px] leading-relaxed">
+                    Wander through the cobbled streets of Galle Fort or scale the ancient steps of Sigiriya.
+                  </p>
+                  <div className="pt-2 flex items-center text-sm font-bold text-[#1A1C1E] group-hover:gap-2 transition-all">
+                    <span>Visit Forts</span>
+                    <span className="opacity-0 group-hover:opacity-100 transition-all">&rarr;</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-20 text-center">
+              <button className="px-10 py-4 border-2 border-[#1A1C1E] text-[#1A1C1E] rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#1A1C1E] hover:text-white transition-all duration-300">
+                View All Experiences
+              </button>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* SECTION 7 - CALL TO ACTION */}
+      <section className="py-24 bg-[#1A1C1E] text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
           <img 
-            src="/logo.png" 
-            alt="Visit Sri Lanka Logo" 
-            className="max-h-16 w-auto object-contain mb-8"
+            src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=2078&auto=format&fit=crop" 
+            className="w-full h-full object-cover"
+            alt="Background Pattern"
           />
-          
-          <div className="flex flex-wrap justify-center gap-6 mb-8">
-            {["Home", "About", "Provinces", "Biodiversity", "Culture", "Activities"].map((link) => (
-              <a 
-                key={link} 
-                href={`#${link.toLowerCase()}`}
-                className="font-inter text-[#FFFFFF] text-[14px] hover:text-[#4A4D55] transition-colors"
-              >
-                {link}
-              </a>
-            ))}
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <FadeInSection>
+            <h2 className="font-playfair font-bold text-3xl md:text-6xl mb-8 px-4">Ready to start your adventure?</h2>
+            <p className="font-inter text-xl text-white/70 max-w-2xl mx-auto mb-12 font-light">
+              Join thousands of travelers who have discovered the magic of the Pearl of the Indian Ocean. Your story starts here.
+            </p>
+            <button className="bg-[#F05442] text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-[#F05442] transition-all duration-500 shadow-xl shadow-black/20">
+              Plan Your Trip Now
+            </button>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* SECTION 8 - FINAL FOOTER (Design-Led & Social-Integrated) */}
+      <footer className="bg-[#111111] pt-24 pb-12 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-12 mb-20">
+            {/* Social Section */}
+            <div className="space-y-4">
+              <p className="font-inter text-[#4D6345] font-bold tracking-[0.2em] text-xs uppercase">Social</p>
+                <div className="flex gap-8">
+                  <a href="#" className="text-white hover:text-[#4D6345] transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                  </a>
+                  <a href="#" className="text-white hover:text-[#4D6345] transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                  </a>
+                </div>
+            </div>
+
+            {/* Newsletter Section */}
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12">
+              <div className="flex flex-col md:flex-row items-start md:items-end gap-6 flex-grow w-full border-b border-white/20 pb-4 focus-within:border-[#4D6345] transition-colors">
+                <h3 className="font-playfair text-2xl md:text-5xl text-white">Join Our Mailing List</h3>
+                <div className="flex-grow w-full">
+                  <input 
+                    type="email" 
+                    placeholder="Email" 
+                    className="w-full bg-transparent border-none outline-none font-inter text-lg placeholder:text-white/30 py-2"
+                  />
+                </div>
+                <button className="bg-[#3D4F37] hover:bg-[#2D3F27] text-white px-10 py-4 font-bold text-xs tracking-[0.2em] transition-all uppercase whitespace-nowrap">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+            <p className="font-inter text-white/40 text-sm font-light">
+              Get 10% off your first purchase when you sign up for our newsletter!
+            </p>
           </div>
 
-          <div className="w-full h-[1px] bg-[#4A4D55] mb-8 opacity-50"></div>
-
-          <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="font-inter text-[#FFFFFF] text-[13px] opacity-80">
-              &copy; 2026 Visit Sri Lanka. All rights reserved.
-            </p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-[#FFFFFF] hover:text-[#4A4D55] transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-              </a>
-              <a href="#" className="text-[#FFFFFF] hover:text-[#4A4D55] transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              </a>
-              <a href="#" className="text-[#FFFFFF] hover:text-[#4A4D55] transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-              </a>
+          <div className="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="flex flex-wrap justify-center gap-10">
+              {navLinks.map((link) => (
+                <Link 
+                  key={link.name} 
+                  to={link.path}
+                  className="font-inter text-white/40 text-sm hover:text-white transition-colors tracking-wide"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-col items-center md:items-end gap-4">
+              <img 
+                src="/tripin_logo.png" 
+                alt="Trippin Logo" 
+                className="h-10 w-auto grayscale invert mix-blend-screen opacity-50"
+              />
+              <p className="font-inter text-white/20 text-[10px] tracking-[0.3em] uppercase">
+                &copy; 2026 TRIPPIN LK. ALL RIGHTS RESERVED.
+              </p>
             </div>
           </div>
         </div>

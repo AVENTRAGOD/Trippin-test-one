@@ -204,7 +204,7 @@ export default function MapPage() {
     <div className="relative w-full h-screen bg-[#E5E3DF] overflow-hidden">
       
       {/* Floating UI Overlay */}
-      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-[1000] flex flex-col gap-4 max-w-[340px] w-full pointer-events-none">
+      <div className="absolute top-2 left-2 right-2 sm:top-6 sm:left-6 z-[1000] flex flex-col gap-3 sm:gap-4 max-w-full sm:max-w-[340px] pointer-events-none">
         
         {/* Navbar Card */}
         <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-4 flex justify-between items-center pointer-events-auto border border-white/20 transition-all duration-300 hover:shadow-2xl">
@@ -218,8 +218,8 @@ export default function MapPage() {
         </div>
 
         {/* Filter & Routing Card */}
-        <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-6 pointer-events-auto border border-white/20 transition-all duration-300 hover:shadow-2xl">
-          <h3 className="font-playfair font-bold text-2xl text-[#2A2B31] mb-5">Explore Regions</h3>
+        <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 pointer-events-auto border border-white/20 transition-all duration-300 hover:shadow-2xl">
+          <h3 className="font-playfair font-bold text-xl sm:text-2xl text-[#2A2B31] mb-5">Explore Regions</h3>
           
           <div className="flex flex-col gap-4">
             <div className="relative">
