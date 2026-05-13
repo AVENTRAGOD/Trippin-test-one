@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { 
   Menu, X, Heart, Gem, TrendingUp, Compass, Sun, Briefcase, Camera, Trees, Landmark
 } from 'lucide-react';
+import Navbar from './Navbar';
 
 const experiences = [
   {
@@ -26,6 +27,7 @@ const experiences = [
   {
     title: "Adventure",
     icon: <Compass />,
+    path: "/adventure",
     desc: "From kite surfing in Kalpitiya to hiking the peaks of Ella, adventure awaits at every turn.",
     img: "https://images.unsplash.com/photo-1502126324834-38f8e02d7160?q=80&w=2070&auto=format&fit=crop"
   },
@@ -39,23 +41,26 @@ const experiences = [
     title: "MICE",
     icon: <Briefcase />,
     desc: "Perfect locations for corporate meetings, incentives, conferences, and exhibitions.",
-    img: "https://images.unsplash.com/photo-1517457373958-b7bdd058a548?q=80&w=2070&auto=format&fit=crop"
+    img: "/mice_confe.jpg"
   },
   {
     title: "Culture",
     icon: <Camera />,
+    path: "/culture",
     desc: "Vibrant history of folktales and stories. 5000 years of documented history will leave you in awe.",
     img: "/dancer.jpg"
   },
   {
     title: "Nature & Wild Life",
     icon: <Trees />,
+    path: "/wildlife",
     desc: "Leopards, elephants, and whales. Sri Lanka is a hot destination for wildlife enthusiasts.",
     img: "/elepents.jpg"
   },
   {
     title: "Architecture",
     icon: <Landmark />,
+    path: "/architecture",
     desc: "From Sigiriya Rock Fortress to the third tallest ancient man-made structures.",
     img: "/sigiriya_drone_view.jpg"
   }
@@ -95,47 +100,7 @@ export default function ExperiencesPage() {
   return (
     <div className="min-h-screen bg-white font-inter text-[#1A1C1E] overflow-x-hidden">
       {/* NAVBAR */}
-      <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <Link to="/" className="flex-shrink-0 flex items-center">
-            <img src="/tripin_logo.png" alt="Trippin Logo" className="h-16 w-auto mix-blend-multiply" />
-          </Link>
-          <div className="hidden lg:flex space-x-10 items-center">
-            {["Home", "Interactive Map", "Experiences", "About"].map((link) => (
-              <Link 
-                key={link} 
-                to={link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`}
-                className="text-[13px] font-bold tracking-[0.15em] uppercase hover:text-[#F05442] transition-colors"
-              >
-                {link}
-              </Link>
-            ))}
-          </div>
-          <button className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-
-        {/* Mobile Nav Drawer */}
-        <div 
-          className={`lg:hidden absolute top-full left-0 w-full bg-[#2A2B31] transition-all duration-300 origin-top overflow-hidden ${
-            mobileMenuOpen ? 'max-h-[300px] py-4' : 'max-h-0 py-0'
-          }`}
-        >
-          <div className="flex flex-col items-center space-y-4">
-            {["Home", "Interactive Map", "Experiences", "About"].map((link) => (
-              <Link 
-                key={link} 
-                to={link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-[#FFFFFF] text-lg font-medium"
-              >
-                {link}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* HERO */}
       <section className="pt-40 pb-20 border-b border-gray-100">
@@ -152,8 +117,8 @@ export default function ExperiencesPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
-            {experiences.map((exp, idx) => (
-              <FadeInSection key={exp.title}>
+            {experiences.map((exp, idx) => {
+              const CardContent = (
                 <div className="group cursor-pointer">
                   <div className="relative overflow-hidden rounded-[2rem] aspect-[4/5] mb-8 bg-gray-100">
                     <img 
@@ -174,8 +139,18 @@ export default function ExperiencesPage() {
                     </div>
                   </div>
                 </div>
-              </FadeInSection>
-            ))}
+              );
+
+              return (
+                <FadeInSection key={exp.title}>
+                  {exp.path ? (
+                    <Link to={exp.path}>{CardContent}</Link>
+                  ) : (
+                    CardContent
+                  )}
+                </FadeInSection>
+              );
+            })}
           </div>
         </div>
       </section>

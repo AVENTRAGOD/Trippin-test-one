@@ -4,6 +4,7 @@ import {
   Waves, Binoculars, Fish, Mountain, Coffee, Anchor, 
   Menu, X, ChevronDown
 } from 'lucide-react';
+import Navbar from './Navbar';
 
 const provincesData = [
   {
@@ -134,64 +135,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-[#FAFAFA] font-inter text-[#33353D] overflow-x-hidden">
       
       {/* NAVBAR */}
-      <nav 
-        className={`fixed w-full z-50 transition-all duration-300 bg-white shadow-sm py-4`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0 cursor-pointer flex items-center">
-            <img 
-              src="/tripin_logo.png" 
-              alt="Trippin Logo" 
-              className="h-16 w-auto object-contain mix-blend-multiply transition-all duration-300"
-            />
-          </Link>
-
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex space-x-8">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                to={link.path}
-                className="text-sm font-medium tracking-wide relative group text-[#33353D]"
-              >
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#F05442] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="focus:outline-none text-[#33353D]"
-            >
-              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Nav Drawer */}
-        <div 
-          className={`lg:hidden absolute top-full left-0 w-full bg-[#2A2B31] transition-all duration-300 origin-top overflow-hidden ${
-            mobileMenuOpen ? 'max-h-[300px] py-4' : 'max-h-0 py-0'
-          }`}
-        >
-          <div className="flex flex-col items-center space-y-4">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                to={link.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-[#FFFFFF] text-lg font-medium"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* SECTION 1 - HERO */}
       <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
@@ -558,10 +502,7 @@ export default function HomePage() {
                   <p className="font-inter text-[#64748B] text-[15px] leading-relaxed">
                     Catch world-class waves in Arugam Bay or relax on the golden shores of Mirissa and Unawatuna.
                   </p>
-                  <div className="pt-2 flex items-center text-sm font-bold text-[#1A1C1E] group-hover:gap-2 transition-all">
-                    <span>Discover More</span>
-                    <span className="opacity-0 group-hover:opacity-100 transition-all">&rarr;</span>
-                  </div>
+
                 </div>
               </div>
 
@@ -580,10 +521,7 @@ export default function HomePage() {
                   <p className="font-inter text-[#64748B] text-[15px] leading-relaxed">
                     Hike through lush emerald tea estates in Nuwara Eliya and enjoy the famous Ceylon tea.
                   </p>
-                  <div className="pt-2 flex items-center text-sm font-bold text-[#1A1C1E] group-hover:gap-2 transition-all">
-                    <span>Explore Trails</span>
-                    <span className="opacity-0 group-hover:opacity-100 transition-all">&rarr;</span>
-                  </div>
+
                 </div>
               </div>
 
@@ -606,18 +544,18 @@ export default function HomePage() {
                   <p className="font-inter text-[#64748B] text-[15px] leading-relaxed">
                     Wander through the cobbled streets of Galle Fort or scale the ancient steps of Sigiriya.
                   </p>
-                  <div className="pt-2 flex items-center text-sm font-bold text-[#1A1C1E] group-hover:gap-2 transition-all">
-                    <span>Visit Forts</span>
-                    <span className="opacity-0 group-hover:opacity-100 transition-all">&rarr;</span>
-                  </div>
+
                 </div>
               </div>
             </div>
 
             <div className="mt-20 text-center">
-              <button className="px-10 py-4 border-2 border-[#1A1C1E] text-[#1A1C1E] rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#1A1C1E] hover:text-white transition-all duration-300">
+              <Link 
+                to="/experiences" 
+                className="inline-block px-10 py-4 border-2 border-[#1A1C1E] text-[#1A1C1E] rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#1A1C1E] hover:text-white transition-all duration-300"
+              >
                 View All Experiences
-              </button>
+              </Link>
             </div>
           </FadeInSection>
         </div>
