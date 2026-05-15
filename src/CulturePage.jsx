@@ -11,7 +11,7 @@ const CulturePage = () => {
     { id: 1, src: '/culture_1.jpg', title: 'Heritage Hero', category: 'General' },
     { id: 2, src: '/culture_2.jpg', title: 'Ceremonial Arts', category: 'Tradition' },
     { id: 3, src: '/culture_3.jpg', title: 'Sacred Rituals', category: 'Spiritual' },
-    { id: 4, src: '/culture_4.jpg', title: 'Ancient Architecture', category: 'History' },
+    { id: 4, src: '/culture_4.jpg', title: 'Ancient Rituals', category: 'History' },
     { id: 5, src: '/culture_5.jpg', title: 'Coastal Faith', category: 'Local' },
     { id: 6, src: '/culture_6.jpg', title: 'Living Legacy', category: 'Culture' },
     { id: 7, src: '/culture_7.jpg', title: 'Artisan Crafts', category: 'Handicraft' },
