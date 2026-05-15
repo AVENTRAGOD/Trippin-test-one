@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Camera, MapPin, X, ArrowRight, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { gsap } from 'gsap';
+import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const CulturePage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const sliderRef = useRef(null);
-  const loopRef = useRef(null);
 
   const images = [
     { id: 1, src: '/culture_1.jpg', title: 'Heritage Hero', category: 'General' },
@@ -27,100 +25,52 @@ const CulturePage = () => {
     { id: 15, src: '/gangaramaya_2.jpg', title: 'Vesak Radiance', category: 'Spiritual' },
   ];
 
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-
-    // Create a smooth horizontal loop
-    const totalWidth = slider.scrollWidth / 2;
+  const InfiniteRollingSlider = ({ items }) => {
+    // Duplicate items for a seamless loop
+    const doubledItems = [...items, ...items];
     
-    loopRef.current = gsap.to(slider, {
-      x: `-=${totalWidth}`,
-      duration: 50,
-      ease: "none",
-      repeat: -1,
-      modifiers: {
-        x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
-      }
-    });
+    return (
+      <div className="relative overflow-hidden py-10 bg-[#0A0A0B]">
+        {/* Subtle Gradient Overlays for smooth entry/exit */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-[#0A0A0B] to-transparent"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-[#0A0A0B] to-transparent"></div>
 
-    return () => {
-      loopRef.current?.kill();
-    };
-  }, []);
-
-  const handleManualScroll = (direction) => {
-    if (!loopRef.current) return;
-    
-    const currentSpeed = loopRef.current.timeScale();
-    const newSpeed = direction === 'left' ? -3 : 3;
-    
-    gsap.to(loopRef.current, { 
-      timeScale: newSpeed, 
-      duration: 0.4,
-      onComplete: () => {
-        gsap.to(loopRef.current, { 
-          timeScale: direction === 'left' ? -1 : 1, 
-          duration: 1.5,
-          ease: "power2.inOut"
-        });
-      }
-    });
-  };
-
-  const GSAPSlider = ({ items }) => (
-    <div className="relative py-20">
-      {/* Decorative Lines from Sketch */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/10 mx-4 md:mx-10"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-white/10 mx-4 md:mx-10"></div>
-
-      <div className="flex items-center gap-4 px-4 md:px-10">
-        {/* Navigation Arrows - Left */}
-        <button 
-          onClick={() => handleManualScroll('left')}
-          className="hidden md:flex flex-shrink-0 w-16 h-64 border border-white/10 items-center justify-center hover:bg-[#F05442] hover:border-[#F05442] transition-all duration-300 rounded-2xl group active:scale-95"
+        <div 
+          className="flex gap-8 w-max animate-marquee"
+          style={{ willChange: "transform" }}
         >
-          <ChevronLeft className="text-white group-hover:scale-125 transition-transform" size={32} />
-        </button>
-
-        {/* Gallery Container */}
-        <div className="overflow-hidden flex-grow py-4 select-none">
-          <div 
-            ref={sliderRef}
-            className="flex flex-nowrap gap-8 will-change-transform w-max"
-          >
-            {[...items, ...items].map((item, idx) => (
-              <div
-                key={`${item.id}-${idx}`}
-                className="gallery-card relative w-[300px] md:w-[550px] aspect-[16/10] flex-shrink-0 group cursor-pointer"
-                onClick={() => setSelectedImage(item)}
-              >
-                <img
-                  src={item.src}
-                  alt={item.title}
-                  className="w-full h-full object-cover rounded-[2rem] shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] flex items-center justify-center backdrop-blur-[2px]">
-                  <div className="bg-white/10 backdrop-blur-md px-8 py-3 rounded-full border border-white/20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <span className="text-white text-xs font-bold tracking-[0.3em] uppercase">Explore</span>
+          {doubledItems.map((item, idx) => (
+            <div
+              key={`${item.id}-${idx}`}
+              className="flex-shrink-0 w-[85vw] md:w-[500px] aspect-[16/10] group relative rounded-[3rem] overflow-hidden cursor-pointer shadow-2xl border border-white/5 bg-[#111112]"
+              onClick={() => setSelectedImage(item)}
+            >
+              <img
+                src={item.src}
+                alt={item.title}
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-10 backdrop-blur-[2px]">
+                <div className="transform translate-y-6 group-hover:translate-y-0 transition-transform duration-700">
+                  <p className="text-[#F05442] text-[10px] font-bold tracking-[0.3em] uppercase mb-3">
+                    {item.category}
+                  </p>
+                  <h4 className="font-playfair text-3xl font-bold text-white italic leading-tight">
+                    {item.title}
+                  </h4>
+                  <div className="mt-6 flex items-center gap-3 text-white/70 text-xs font-semibold tracking-widest uppercase">
+                    <span className="h-[1px] w-8 bg-[#F05442]"></span>
+                    <span>View Artifact</span>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-
-        {/* Navigation Arrows - Right */}
-        <button 
-          onClick={() => handleManualScroll('right')}
-          className="hidden md:flex flex-shrink-0 w-16 h-64 border border-white/10 items-center justify-center hover:bg-[#F05442] hover:border-[#F05442] transition-all duration-300 rounded-2xl group active:scale-95"
-        >
-          <ChevronRight className="text-white group-hover:scale-125 transition-transform" size={32} />
-        </button>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="bg-[#0A0A0B] min-h-screen font-sans text-white overflow-x-hidden">
@@ -176,19 +126,19 @@ const CulturePage = () => {
         </div>
       </section>
 
-      {/* The Sliding Master Gallery */}
+      {/* The Infinite Rolling Slider Section */}
       <section className="pb-32 overflow-hidden bg-[#0A0A0B]">
-        <div className="px-4 mb-12 flex justify-between items-end max-w-7xl mx-auto">
-          <div>
-            <h3 className="text-sm font-bold tracking-[0.2em] uppercase text-[#F05442] mb-2">Cinematic Gallery</h3>
-            <p className="text-3xl font-playfair italic">Visual Chronicles</p>
+        <div className="px-4 mb-16 flex flex-col md:flex-row justify-between items-start md:items-end max-w-7xl mx-auto gap-4">
+          <div className="space-y-3">
+            <h3 className="text-sm font-bold tracking-[0.3em] uppercase text-[#F05442]">Infinite Motion</h3>
+            <p className="text-5xl md:text-7xl font-playfair italic tracking-tighter">Visual Chronicles</p>
           </div>
-          <p className="text-gray-500 text-sm hidden md:block">Hover to slow down • Click to expand</p>
+          <p className="text-gray-500 text-xs font-bold uppercase tracking-[0.2em] border-l border-[#F05442]/30 pl-6 h-fit py-1">
+            Hover to Pause • Click to Expand
+          </p>
         </div>
 
-        <div className="space-y-6">
-          <GSAPSlider items={images} />
-        </div>
+        <InfiniteRollingSlider items={images} />
       </section>
 
       {/* Lightbox Pop-up */}
@@ -237,26 +187,48 @@ const CulturePage = () => {
         )}
       </AnimatePresence>
 
-      {/* Call to Action */}
-      <section className="py-40 relative overflow-hidden bg-black">
+      {/* Call to Action - UI/UX Refined */}
+      <section className="py-48 relative overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
-          <img src="/culture_6.jpg" className="w-full h-full object-cover opacity-70" alt="CTA BG" />
-          <div className="absolute inset-0 bg-black/70"></div>
+          <img 
+            src="/culture_6.jpg" 
+            className="w-full h-full object-cover opacity-60 scale-110" 
+            alt="CTA BG" 
+          />
+          {/* Professional Gradient Overlay for Depth */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
-          <p className="text-6xl md:text-8xl font-playfair font-bold tracking-tighter mb-12 leading-tight italic text-white">
-            "To know Sri Lanka, <br />
-            one must first <br />
-            feel its heart."
-          </p>
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-12 py-5 bg-[#F05442] text-white rounded-full font-bold tracking-widest text-sm uppercase hover:bg-white hover:text-black transition-colors shadow-2xl"
+        <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
           >
-            Connect With Us
-          </motion.button>
+            <p className="font-playfair text-5xl md:text-[100px] font-bold tracking-tighter mb-16 leading-[1.1] italic text-white drop-shadow-2xl">
+              "To know Sri Lanka, <br className="hidden md:block" />
+              one must first <br className="hidden md:block" />
+              feel its heart."
+            </p>
+            
+            <Link to="/about">
+              <motion.button 
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 20px 40px -10px rgba(240, 84, 66, 0.4)"
+                }}
+                whileTap={{ scale: 0.98 }}
+                className="group relative px-16 py-6 bg-[#F05442] text-white rounded-full font-bold tracking-[0.2em] text-xs uppercase overflow-hidden transition-all duration-500"
+              >
+                <span className="relative z-10">Connect With Us</span>
+                <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                <span className="absolute inset-0 z-10 group-hover:text-black flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  Connect With Us
+                </span>
+              </motion.button>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -268,6 +240,18 @@ const CulturePage = () => {
         }
         .animate-slow-zoom {
           animation: slow-zoom 20s infinite alternate ease-in-out;
+        }
+        
+        @keyframes marquee {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          display: flex;
+          animation: marquee 60s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </div>
