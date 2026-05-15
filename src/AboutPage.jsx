@@ -215,7 +215,7 @@ export default function AboutPage() {
       {/* FOOTER */}
       <footer className="bg-[#0A0A0B] pt-24 pb-12 text-white border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
-          <img src="/tripin_lk_favicon.svg" alt="Logo" className="h-16 mx-auto opacity-50 hover:opacity-100 transition-opacity" />
+          <img src="/tripin_logo.png" alt="Logo" className="h-16 mx-auto opacity-50 hover:opacity-100 transition-opacity" />
           
           <div className="flex justify-center gap-6">
             <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
