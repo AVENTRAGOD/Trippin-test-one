@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Waves, Binoculars, Fish, Mountain, Coffee, Anchor, 
-  Menu, X, ChevronDown
+  Menu, X, ChevronDown, Sun, CloudRain, MapPin, Calendar, 
+  Compass, Thermometer, Info, ChevronLeft, ChevronRight, Sparkles
 } from 'lucide-react';
 import Navbar from './Navbar';
 
@@ -72,6 +73,153 @@ const provincesData = [
   }
 ];
 
+const MONTHS_DATA = [
+  {
+    id: "january",
+    name: "January",
+    theme: "Sunny Southern Beaches",
+    image: "/months/jan_pic.jpg",
+    weather: "27°C - 30°C",
+    climate: "Dry, warm, and highly sunny. Gentle offshore ocean breezes keep coastal temperatures pleasant.",
+    destinations: ["Mirissa", "Galle Fort", "Weligama", "Hikkaduwa"],
+    festivals: "Duruthu Perahera — A grand historical Buddhist procession in Kelaniya celebrating Buddha's first sacred visit to Sri Lanka, filled with vibrant dancers, drummers, and lights.",
+    activities: ["Blue Whale Watching", "Surfing & Snorkeling", "Colonial Fort Walking Tours", "Sunset Beach Dining"],
+    tip: "January is absolute peak season for the south coast. Ensure you book all boutique beach accommodations and whale-watching tours several weeks in advance."
+  },
+  {
+    id: "february",
+    name: "February",
+    theme: "Wildlife Safari Peak",
+    image: "/months/feb_pic.jpg",
+    weather: "28°C - 32°C",
+    climate: "Dry and bright across the lowlands. Ideal waterhole conditions for wildlife tracking as vegetation thins.",
+    destinations: ["Yala National Park", "Udawalawe Sanctuary", "Kumana Bird Park", "Bundala"],
+    festivals: "Navam Full Moon Perahera — Colombo's most dramatic cultural parade, featuring hundreds of beautifully caparisoned elephants, whip-crackers, and traditional fire-dancers.",
+    activities: ["4x4 Leopard Tracking Safaris", "Elephant Rehabilitation Visits", "Coastal Lagoon Bird Watching", "Lakeside Wilderness Camping"],
+    tip: "To maximize leopard sightings in Yala, arrange your safari drives at the crack of dawn (5:30 AM) when the predators are active before the tropical sun climbs high."
+  },
+  {
+    id: "march",
+    name: "March",
+    theme: "Surfing & Coastal Calm",
+    image: "/months/march_pic.jpg",
+    weather: "29°C - 33°C",
+    climate: "Gorgeous, warm, and highly stable tropical conditions. Clear water column makes it ideal for oceanic excursions.",
+    destinations: ["Weligama Bay", "Hikkaduwa Coral Reef", "Mirissa Sea Cliffs", "Talalla"],
+    festivals: "Medin Poya Perahera — Celebrates Buddha's historic return to his home kingdom after enlightenment, marked by beautiful local lantern processions.",
+    activities: ["Beginner-to-Pro Surf Sessions", "Diving with Sea Turtles", "Deep Sea Angling Charter", "Catamaran Coastal Cruises"],
+    tip: "The calm swell in March makes Weligama the best place in Asia for beginners to take surf lessons. Rent boards locally directly on the sand."
+  },
+  {
+    id: "april",
+    name: "April",
+    theme: "New Year Cultural Festivities",
+    image: "/months/apr_pic.jpg",
+    weather: "30°C - 34°C",
+    climate: "Hot and highly festive. Warm tropical afternoons with refreshing evening monsoon-precursor showers (Avurudu rain).",
+    destinations: ["Nuwara Eliya Hills", "Colombo Capital", "Galle Colonial Quarter", "Katharagama"],
+    festivals: "Aluth Avurudu (Sinhala & Tamil New Year) — The massive nationwide national harvest festival on April 13-14. Marked by oil-anointing rituals, traditional sweets, and street games.",
+    activities: ["Avurudu Sweets Tasting", "Playing Traditional Street Games", "Nuwara Eliya Spring Flower Festival", "Gregory Lake Speedboating"],
+    tip: "On April 13th & 14th, expect most stores, transport links, and commercial centers to be closed as locals travel to ancestral homes. Plan routes early."
+  },
+  {
+    id: "may",
+    name: "May",
+    theme: "Misty Rainforests & Monsoons",
+    image: "/months/may_pic.jpg",
+    weather: "26°C - 30°C",
+    climate: "The Southwest monsoon arrives. Dramatic cloudscapes, heavy warm downpours, and magical mists in the mountain valleys.",
+    destinations: ["Sinharaja Rainforest", "Nuwara Eliya Highlands", "Kitulgala Gorges", "Adams Peak"],
+    festivals: "Vesak Festival of Lights — Celebrates Buddha's birth, enlightenment, and passing. The entire country lights up with colossal paper lanterns, decorative pandols, and free food stalls (Dansalas).",
+    activities: ["Jungle Rainforest Trekking", "Waterfall Chasing", "Ceylon Tea-Tasting Sessions", "Whitewater Rafting"],
+    tip: "Rainforest trails in Sinharaja are incredibly lush but populated by leeches in May. Rub soap or spray salt-water on socks and ankles before setting out."
+  },
+  {
+    id: "june",
+    name: "June",
+    theme: "East Coast Beach Haven",
+    image: "/months/june_pic.jpg",
+    weather: "30°C - 34°C",
+    climate: "Dry, breezy, and incredibly sunny on the east coast. Calm blue turquoise waters contrast with rougher skies on the south coast.",
+    destinations: ["Arugam Bay", "Trincomalee", "Nilaveli Beach", "Pigeon Island"],
+    festivals: "Poson Poya Festival — Commemorates the historic arrival of Buddhism in Sri Lanka, focused around the sacred mountain peak of Mihintale.",
+    activities: ["World-Class Surfing (A-Bay)", "Snorkeling with Reef Sharks", "Dolphin Watching Cruises", "Seafood Beach Barbecue"],
+    tip: "June is the perfect time to switch itineraries from the south/west to the East Coast where the weather is dry and sea conditions are pristine."
+  },
+  {
+    id: "july",
+    name: "July",
+    theme: "Kandy Esala Perahera Epoch",
+    image: "/months/july_pic.jpeg",
+    weather: "28°C - 32°C",
+    climate: "Very pleasant weather. Clear skies in the Cultural Triangle, with light refreshing mountain showers in Kandy.",
+    destinations: ["Kandy Hill Capital", "Sigiriya Citadel", "Minneriya National Park", "Dambulla"],
+    festivals: "Kandy Esala Perahera — A stunning 10-day world-famous spectacle featuring thousands of traditional drummers, flame-dancers, whip-crackers, and majestic decorated elephants carrying the sacred tooth relic.",
+    activities: ["Spectating the Night Procession", "Climbing Sigiriya Rock Fortress", "Safari at The Great Elephant Gathering", "Exploring Dambulla Cave Temples"],
+    tip: "Kandy Esala Perahera is a globally highly-sought event. Hotel bookings and grandstand tickets must be secured at least 3 to 4 months in advance."
+  },
+  {
+    id: "august",
+    name: "August",
+    theme: "Highland Tea Country Exploration",
+    image: "/months/aug_pic.jpg",
+    weather: "18°C - 24°C",
+    climate: "Cool, crisp mountain air. Perfect refreshing escape from the coastal heat, with misty valleys and morning sunbeams.",
+    destinations: ["Nuwara Eliya", "Ella Mountain Town", "Horton Plains", "Haputale"],
+    festivals: "Kataragama Festival — A historic multi-religious jungle pilgrimage characterized by incredible fire-walking rituals and Kavadi dance offerings.",
+    activities: ["Horton Plains Trek to World's End", "Ceylon Tea-Plucking & Factory Tours", "Hiking Little Adam's Peak", "Cascading Waterfall Picnics"],
+    tip: "Temperatures in Nuwara Eliya and Horton Plains drop down to 10°C at night in August. Bring warm fleece jackets, beanies, and suitable layers."
+  },
+  {
+    id: "september",
+    name: "September",
+    theme: "Scenic Ella Train Journeys",
+    image: "/months/sep_pic.jpg",
+    weather: "24°C - 28°C",
+    climate: "Mild highland temperatures with occasional soft showers that wash the hillsides into brilliant emerald green.",
+    destinations: ["Ella", "Nine Arch Bridge", "Ella Rock", "Demodara Loop"],
+    festivals: "Binara Full Moon Poya — Commemorates Buddha's establishment of the Buddhist bhikkhuni (nun) order, celebrated with sacred temple sermons.",
+    activities: ["Kandy-to-Ella Scenic Train Journey", "Walking the Nine Arch Railway Bridge", "Hiking the Ella Rock Crest", "Ravana Pool Club Lounge"],
+    tip: "Train tickets for the highly coveted Kandy-to-Ella route sell out instantly. Ensure you book first or second-class observation cabin seats exactly 30 days before travel."
+  },
+  {
+    id: "october",
+    name: "October",
+    theme: "Chasing Mighty Waterfalls",
+    image: "/months/oct_pic.jpg",
+    weather: "25°C - 29°C",
+    climate: "Inter-monsoon season. Beautiful afternoon thunderstorms create dramatic monsoon skies, filling rivers and waterfalls to full capacity.",
+    destinations: ["Diyaluma Falls", "Ravana Falls", "Kitulgala Forest Reserve", "Ramboda Pass"],
+    festivals: "Deepavali — The beautiful Hindu Festival of Lights, celebrating the victory of light over darkness with illuminated oil lamps and colorful sugar kolam designs.",
+    activities: ["Waterfall Pool Swimming", "Whitewater Rafting & Canyoning", "Ayurvedic Spa Healing Retreats", "Rainforest Canopy Walking"],
+    tip: "While waterfalls are magnificent in October, avoid swimming in deep plunge pools as flash mountain floods can double water currents in minutes."
+  },
+  {
+    id: "november",
+    name: "November",
+    theme: "Ancient Kingdoms & Heritage",
+    image: "/months/nov_pic.jpg",
+    weather: "27°C - 31°C",
+    climate: "Transitional and fresh. Clear mornings with cool afternoon showers, turning the ancient royal reservoirs into rich sanctuaries.",
+    destinations: ["Anuradhapura", "Polonnaruwa", "Sigiriya Sanctuary", "Mihintale"],
+    festivals: "Il Full Moon Poya — Marking the end of the rainy retreat and the dispatching of early Buddhist missionaries, celebrated with temple oil lamps.",
+    activities: ["Cycling through Ruined Cities", "Exploring Royal Palace Relics", "Archaeological Photography", "Scenic Lake Kayaking"],
+    tip: "When visiting sacred ruins, you must dress respectfully (knees and shoulders fully covered, hats and footwear removed before entering temple compounds)."
+  },
+  {
+    id: "december",
+    name: "December",
+    theme: "Festive Beach Holidays",
+    image: "/months/dec_pic.jpg",
+    weather: "27°C - 31°C",
+    climate: "Perfect coastal climate. High sun, calm seas on the south and west shores, and crisp cool trade winds.",
+    destinations: ["Bentota", "Unawatuna Beach", "Galle Fort", "Mirissa Beach"],
+    festivals: "Unduvap Poya & Festive Season — Celebrates the bringing of the sacred Sri Maha Bodhi sapling. Merges with vibrant tropical Christmas & beach NYE count downs.",
+    activities: ["Windsurfing & Jet-skiing", "Boutique Colonial Shopping", "Luxury Beach Barbecue Dining", "New Year Eve Shoreline Parties"],
+    tip: "December is the absolute peak of international tourism in Sri Lanka. Flights and high-end beach properties are fully booked; secure bookings months ahead."
+  }
+];
+
 const FadeInSection = ({ children }) => {
   const [isVisible, setVisible] = useState(false);
   const domRef = useRef();
@@ -109,6 +257,97 @@ export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedProvince, setSelectedProvince] = useState(provincesData[1]); // Central default
   const videoRef = useRef(null);
+
+  const [activeModalMonth, setActiveModalMonth] = useState(null);
+  const [hoveredMonthIndex, setHoveredMonthIndex] = useState(null);
+  const [scrollPercent, setScrollPercent] = useState(0);
+  const [sliderPaused, setSliderPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const sliderRef = useRef(null);
+  const progressRef = useRef(null);
+  const dragStartX = useRef(0);
+  const dragScrollLeft = useRef(0);
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    dragStartX.current = e.pageX - sliderRef.current.offsetLeft;
+    dragScrollLeft.current = sliderRef.current.scrollLeft;
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - sliderRef.current.offsetLeft;
+    const walk = (x - dragStartX.current) * 1.5;
+    if (sliderRef.current) {
+      sliderRef.current.scrollLeft = dragScrollLeft.current - walk;
+    }
+  };
+
+  const scrollSlider = (direction) => {
+    if (sliderRef.current) {
+      const scrollAmount = 344;
+      const currentScroll = sliderRef.current.scrollLeft;
+      const targetScroll = direction === 'left' ? currentScroll - scrollAmount : currentScroll + scrollAmount;
+      sliderRef.current.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  useEffect(() => {
+    const handleSliderScroll = () => {
+      if (sliderRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+        const totalScrollable = scrollWidth - clientWidth;
+        if (totalScrollable > 0) {
+          const percent = (scrollLeft / totalScrollable) * 100;
+          setScrollPercent(percent);
+        }
+      }
+    };
+
+    const slider = sliderRef.current;
+    if (slider) {
+      slider.addEventListener('scroll', handleSliderScroll);
+      handleSliderScroll();
+    }
+    return () => {
+      if (slider) {
+        slider.removeEventListener('scroll', handleSliderScroll);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (sliderPaused || isDragging || activeModalMonth) return;
+
+    const interval = setInterval(() => {
+      if (sliderRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+        const totalScrollable = scrollWidth - clientWidth;
+        const scrollAmount = 344;
+
+        if (scrollLeft >= totalScrollable - 10) {
+          sliderRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          sliderRef.current.scrollTo({ left: scrollLeft + scrollAmount, behavior: 'smooth' });
+        }
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [sliderPaused, isDragging, activeModalMonth]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -244,6 +483,247 @@ export default function HomePage() {
             </div>
           </FadeInSection>
         </div>
+      </section>
+
+      {/* 12 MONTHS OF PARADISE SECTION */}
+      <section className="py-24 bg-[#111315] text-white relative overflow-hidden">
+        {/* Soft glowing ambient backgrounds */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#F05442]/5 rounded-full blur-[150px] pointer-events-none"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#10B981]/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <FadeInSection>
+            {/* Header Content */}
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
+              <div className="space-y-4">
+                <p className="font-inter text-[#F05442] font-bold tracking-[0.3em] text-sm uppercase">
+                  Seasonal Wonder
+                </p>
+                <h2 className="font-playfair font-bold text-4xl md:text-6xl text-white leading-tight">
+                  12 Months of Paradise
+                </h2>
+                <p className="font-inter text-white/60 text-lg max-w-2xl font-light leading-relaxed">
+                  Sri Lanka is a year-round destination. Discover how the island's unique climates, vibrant local festivals, and natural migrations transform every single month into a distinctive travel paradise.
+                </p>
+              </div>
+
+              {/* Slider controls */}
+              <div className="flex gap-4">
+                <button
+                  onClick={() => scrollSlider('left')}
+                  className="w-14 h-14 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-white flex items-center justify-center hover:bg-white hover:text-[#111315] hover:border-white transition-all duration-300 shadow-lg cursor-pointer"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <button
+                  onClick={() => scrollSlider('right')}
+                  className="w-14 h-14 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-white flex items-center justify-center hover:bg-white hover:text-[#111315] hover:border-white transition-all duration-300 shadow-lg cursor-pointer"
+                >
+                  <ChevronRight size={24} />
+                </button>
+              </div>
+            </div>
+          </FadeInSection>
+
+          {/* Cards Slider Wrapper */}
+          <div className="relative group/slider">
+            <div
+              ref={sliderRef}
+              onMouseDown={handleMouseDown}
+              onMouseLeave={handleMouseLeave}
+              onMouseUp={handleMouseUp}
+              onMouseMove={handleMouseMove}
+              onMouseEnter={() => setSliderPaused(true)}
+              onMouseLeave={() => setSliderPaused(false)}
+              className="flex gap-6 overflow-x-scroll scroll-smooth pb-12 cursor-grab active:cursor-grabbing scrollbar-none select-none"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {MONTHS_DATA.map((month, index) => (
+                <div
+                  key={month.id}
+                  onClick={() => {
+                    if (!isDragging) {
+                      setActiveModalMonth(month);
+                    }
+                  }}
+                  onMouseEnter={() => setHoveredMonthIndex(index)}
+                  onMouseLeave={() => setHoveredMonthIndex(null)}
+                  className="flex-shrink-0 w-[280px] sm:w-[320px] aspect-[2/3] rounded-[2rem] overflow-hidden relative group/card cursor-pointer border border-white/10 bg-[#1A1D20] shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                  style={{
+                    boxShadow: hoveredMonthIndex === index ? '0 20px 40px -15px rgba(240, 84, 66, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1)' : 'none'
+                  }}
+                >
+                  {/* Card Background Image */}
+                  <img
+                    src={month.image}
+                    alt={month.theme}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover/card:scale-110"
+                  />
+                  {/* Cinematic Dark Overlay Gradients */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111315] via-[#111315]/20 to-transparent transition-opacity duration-500 group-hover/card:opacity-90"></div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent"></div>
+
+                  {/* Top Details (Weather Badge) */}
+                  <div className="absolute top-6 left-6 z-10">
+                    <span className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest bg-black/40 backdrop-blur-md border border-white/10 text-white shadow-lg">
+                      <Sun size={12} className="text-[#F05442]" />
+                      {month.weather}
+                    </span>
+                  </div>
+
+                  {/* Card Info Overlay */}
+                  <div className="absolute bottom-0 inset-x-0 p-8 z-10 flex flex-col justify-end h-1/2">
+                    <p className="font-inter text-[#F05442] font-semibold text-xs tracking-[0.2em] uppercase mb-2">
+                      {month.name}
+                    </p>
+                    <h3 className="font-playfair font-bold text-2xl sm:text-3xl text-white mb-3 group-hover/card:text-[#F05442] transition-colors leading-tight">
+                      {month.theme}
+                    </h3>
+                    <p className="font-inter text-white/60 text-sm font-light line-clamp-2 leading-relaxed opacity-0 translate-y-4 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-500 delay-75">
+                      {month.climate}
+                    </p>
+                    <div className="flex items-center gap-2 text-xs font-bold text-white/90 uppercase tracking-widest mt-4 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 delay-150">
+                      <span>Explore Month</span>
+                      <span className="group-hover/card:translate-x-2 transition-transform duration-300">&rarr;</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Slide Pagination Indicator (Dynamic Line) */}
+            <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden mt-4">
+              <div 
+                className="h-full bg-[#F05442] rounded-full transition-all duration-300"
+                style={{ width: `${scrollPercent}%` }}
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        {/* MODAL POPUP */}
+        {activeModalMonth && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+            {/* Backdrop with Deep Blur and Fade-In Animation */}
+            <div
+              className="fixed inset-0 bg-black/75 backdrop-blur-xl transition-opacity duration-500 ease-out"
+              onClick={() => setActiveModalMonth(null)}
+            ></div>
+
+            {/* Modal Body Container with Scale/Fade Transition */}
+            <div className="relative bg-[#1A1D20] border border-white/10 rounded-[2.5rem] w-full max-w-5xl overflow-hidden shadow-2xl z-10 transition-all duration-500 transform scale-100 opacity-100 max-h-[90vh] flex flex-col md:flex-row">
+              
+              {/* Close Button */}
+              <button
+                onClick={() => setActiveModalMonth(null)}
+                className="absolute top-6 right-6 z-30 w-12 h-12 rounded-full border border-white/10 bg-black/40 backdrop-blur-md text-white flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all duration-300 cursor-pointer"
+              >
+                <X size={20} />
+              </button>
+
+              {/* Left Column: Rich Visual Image Showcase */}
+              <div className="w-full md:w-5/12 relative min-h-[300px] md:min-h-full">
+                <img
+                  src={activeModalMonth.image}
+                  alt={activeModalMonth.theme}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                {/* Cinematic Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111315] via-transparent to-black/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#1A1D20]/90 hidden md:block"></div>
+
+                {/* Layered Details over Image */}
+                <div className="absolute bottom-8 left-8 right-8 z-10 text-white">
+                  <span className="flex items-center gap-1.5 w-fit px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest bg-[#F05442] text-white shadow-lg mb-4">
+                    <Sun size={12} />
+                    {activeModalMonth.weather} average
+                  </span>
+                  <p className="font-inter text-[#F05442] font-bold text-sm tracking-[0.3em] uppercase mb-1">
+                    {activeModalMonth.name} Season
+                  </p>
+                  <h3 className="font-playfair font-bold text-3xl md:text-4xl leading-tight">
+                    {activeModalMonth.theme}
+                  </h3>
+                </div>
+              </div>
+
+              {/* Right Column: Scrollable Detail Panel */}
+              <div className="w-full md:w-7/12 p-8 sm:p-12 overflow-y-auto max-h-[60vh] md:max-h-[85vh] text-white space-y-8 scrollbar-thin">
+                
+                {/* Section 1: Weather & Climate */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 text-[#F05442]">
+                    <Thermometer size={20} />
+                    <span className="font-inter text-xs font-bold uppercase tracking-widest">Climate & Atmosphere</span>
+                  </div>
+                  <p className="font-inter text-white/80 text-base sm:text-lg leading-relaxed font-light">
+                    {activeModalMonth.climate}
+                  </p>
+                </div>
+
+                {/* Section 2: Best Destinations */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2 text-[#F05442]">
+                    <MapPin size={20} />
+                    <span className="font-inter text-xs font-bold uppercase tracking-widest">Spotlight Destinations</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {activeModalMonth.destinations.map((dest, i) => (
+                      <span
+                        key={i}
+                        className="bg-[#23272B] border border-white/5 text-white/95 px-4 py-2 rounded-xl text-sm font-medium hover:border-[#F05442] hover:text-[#F05442] transition-colors duration-300"
+                      >
+                        {dest}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Section 3: Cultural Festivals */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 text-[#F05442]">
+                    <Calendar size={20} />
+                    <span className="font-inter text-xs font-bold uppercase tracking-widest">Seasonal Festival</span>
+                  </div>
+                  <div className="bg-[#23272B]/60 border border-white/5 rounded-2xl p-5 flex gap-4 items-start">
+                    <Sparkles size={24} className="text-[#F05442] shrink-0 mt-0.5" />
+                    <p className="font-inter text-white/85 text-sm sm:text-base leading-relaxed font-light">
+                      {activeModalMonth.festivals}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Section 4: Recommended Activities */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2 text-[#F05442]">
+                    <Compass size={20} />
+                    <span className="font-inter text-xs font-bold uppercase tracking-widest">Signature Activities</span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {activeModalMonth.activities.map((act, i) => (
+                      <div key={i} className="flex items-center gap-3 bg-[#23272B] border border-white/5 p-4 rounded-xl hover:border-white/10 transition-colors">
+                        <div className="w-2 h-2 rounded-full bg-[#F05442]"></div>
+                        <span className="font-inter text-white/90 text-sm font-medium">{act}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Section 5: Expert Travel Advice (Callout Box) */}
+                <div className="border-l-4 border-[#F05442] bg-[#F05442]/5 rounded-r-2xl p-5 space-y-2">
+                  <div className="flex items-center gap-2 text-[#F05442]">
+                    <Info size={16} />
+                    <span className="font-inter text-xs font-bold uppercase tracking-widest">Local Travel Tip</span>
+                  </div>
+                  <p className="font-inter text-white/80 text-sm sm:text-base leading-relaxed font-light italic">
+                    "{activeModalMonth.tip}"
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* SECTION 3 - INTERACTIVE RED MAP */}
